@@ -1,0 +1,1192 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing | 실시간 소셜리스닝</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Small helper for smooth scrolling */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+  <!-- Top bar -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-3">
+        <div class="h-9 w-9 rounded-xl bg-indigo-600"></div>
+        <div>
+          <div class="text-sm font-semibold leading-tight">Real-time Listening</div>
+          <div class="text-xs text-slate-500">키워드 기반 수집 + 인사이트</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="#compare" class="hidden rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 md:block">플랜 비교</a>
+        <a href="#calculator" class="hidden rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 md:block">요금 계산</a>
+        <a href="#contact" class="rounded-lg bg-slate-900 px-3 py-2 text-sm font-semibold text-white hover:bg-slate-800">데모/문의</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="mx-auto max-w-7xl px-4 pt-10 pb-6">
+    <div class="grid gap-6 md:grid-cols-[1fr_1.2fr] md:items-center">
+      <div>
+        <h1 class="text-3xl font-bold tracking-tight md:text-4xl">
+          필요한 만큼만 늘리는<br class="hidden md:block" />
+          <span class="text-indigo-700">실시간 소셜리스닝</span> 요금제
+        </h1>
+        <p class="mt-3 text-slate-600">
+          “모든 데이터를 미리 쌓아두는 방식”이 아니라,
+          <span class="font-semibold">키워드 등록 시점부터 필요한 데이터만 수집</span>합니다.
+          (필요하면 <span class="font-semibold">과거 데이터 소급 수집(Backfill)</span>도 선택 가능)
+        </p>
+
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="#calculator" class="rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-500">내 예산으로 계산하기</a>
+          <a href="#compare" class="rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 hover:bg-slate-100">플랜 비교 보기</a>
+        </div>
+
+        <div class="mt-4 rounded-xl border border-slate-200 bg-white p-4 text-sm text-slate-700">
+          <div class="font-semibold">핵심 개념(쉽게)</div>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li><span class="font-semibold">플랜</span>은 기능 범위(무엇을 할 수 있는지)를 결정합니다.</li>
+            <li><span class="font-semibold">차등(금액 차이)</span>은 사용량/규모(키워드·좌석·수집·AI·소급)로 결정합니다.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="flex items-center justify-between gap-3">
+          <div>
+            <div class="text-sm font-semibold text-slate-900">결제 방식</div>
+            <div class="text-xs text-slate-500">연간 결제는 15% 절감(예시)</div>
+          </div>
+
+          <div class="inline-flex rounded-xl border border-slate-200 bg-slate-50 p-1" role="tablist" aria-label="Billing toggle">
+            <button id="billingMonthlyBtn" class="rounded-lg px-3 py-1.5 text-sm font-semibold bg-white shadow-sm" type="button">월간</button>
+            <button id="billingAnnualBtn" class="rounded-lg px-3 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900" type="button">연간</button>
+          </div>
+        </div>
+
+        <div class="mt-5 grid gap-3 sm:grid-cols-3">
+          <!-- Basic -->
+          <div class="rounded-2xl border border-slate-200 p-4">
+            <div class="text-sm font-semibold">Basic</div>
+            <div class="mt-1 text-xs text-slate-500">파일럿/기본 모니터링</div>
+            <div class="mt-3">
+              <div class="text-2xl font-bold" data-plan-price="basic" data-monthly="1500000">₩1,500,000</div>
+              <div class="text-xs text-slate-500">/ 월 (VAT 별도)</div>
+            </div>
+            <ul class="mt-3 space-y-1 text-xs text-slate-700">
+              <li>• 키워드 10 포함</li>
+              <li>• 좌석 3 포함</li>
+              <li>• 15분 수집 주기</li>
+              <li>• 기본 분석 + AI 요약</li>
+            </ul>
+          </div>
+
+          <!-- Pro (recommended) -->
+          <div class="relative rounded-2xl border-2 border-indigo-600 p-4">
+            <div class="absolute -top-3 left-4 rounded-full bg-indigo-600 px-2.5 py-1 text-xs font-semibold text-white">추천</div>
+            <div class="text-sm font-semibold">Pro</div>
+            <div class="mt-1 text-xs text-slate-500 whitespace-nowrap">그룹사 실무 확장(메인)</div>
+            <div class="mt-3">
+              <div class="text-2xl font-bold" data-plan-price="pro" data-monthly="4900000">₩4,900,000</div>
+              <div class="text-xs text-slate-500">/ 월 (VAT 별도)</div>
+            </div>
+            <ul class="mt-3 space-y-1 text-xs text-slate-700">
+              <li>• 키워드 50 포함</li>
+              <li>• 좌석 10 포함</li>
+              <li>• 5분 수집 주기</li>
+              <li>• AI 인사이트/뉴스레터 알림</li>
+              <li>• Backfill 30일(조건부 포함)</li>
+            </ul>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="rounded-2xl border border-slate-200 p-4">
+            <div class="text-sm font-semibold">Enterprise</div>
+            <div class="mt-1 text-xs text-slate-500">전사/보안/연동</div>
+            <div class="mt-3">
+              <div class="text-2xl font-bold" data-plan-price="ent" data-monthly="12000000">₩12,000,000~</div>
+              <div class="text-xs text-slate-500">/ 월 (협의, VAT 별도)</div>
+            </div>
+            <ul class="mt-3 space-y-1 text-xs text-slate-700">
+              <li>• SSO/감사로그</li>
+              <li>• API/웹훅</li>
+              <li>• 1분(준실시간) 옵션</li>
+              <li>• RAG 챗봇/자동 리포트</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-4 rounded-xl bg-slate-50 p-3 text-xs text-slate-600">
+          ※ 표기 금액/포함량은 <span class="font-semibold">예시 앵커</span>입니다. 실제 계약/원가/범위에 따라 조정 가능합니다.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator (logic-first) -->
+  <section id="calculator" class="mx-auto max-w-7xl px-4 py-8">
+    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h2 class="text-lg font-bold">요금 계산 (합리적 차등: 필요한 것만 증량)</h2>
+          <p class="mt-1 text-sm text-slate-600">
+            기능은 플랜으로 정하고, 금액은 사용량(키워드·좌석·수집·AI·소급)으로 결정합니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-5 grid gap-4 md:grid-cols-3">
+        <!-- Plan -->
+        <div class="rounded-2xl border border-slate-200 p-4">
+          <div class="text-sm font-semibold">1) 플랜 선택</div>
+          <p class="mt-1 text-xs text-slate-500">플랜은 기능 범위를 결정합니다.</p>
+          <label class="mt-3 block text-xs font-semibold text-slate-600">플랜</label>
+          <select id="planSelect" class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600">
+            <option value="basic">Basic (₩1,500,000/월)</option>
+            <option value="pro" selected>Pro (₩4,900,000/월)</option>
+            <option value="ent">Enterprise (₩12,000,000~/월)</option>
+          </select>
+
+          <div class="mt-4 rounded-xl bg-slate-50 p-3 text-xs text-slate-700">
+            <div class="font-semibold">연간 결제</div>
+            <div class="mt-1">월 요금 × 12 × (1 - 15%)</div>
+          </div>
+
+          <div class="mt-3 text-xs text-slate-500">
+            💡 아래 <span class="font-semibold">i</span> 버튼을 클릭하면 각 항목의 설명을 볼 수 있습니다.
+          </div>
+        </div>
+
+        <!-- Usage knobs -->
+        <div class="rounded-2xl border border-slate-200 p-4 md:col-span-2">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <div class="text-sm font-semibold">2) 사용량/규모 증량</div>
+              <p class="mt-1 text-xs text-slate-500">딱 필요한 것만 올리면 됩니다.</p>
+            </div>
+            <div class="text-xs text-slate-500">단가(예시) 기준</div>
+          </div>
+
+          <div class="mt-4 grid gap-3 sm:grid-cols-2">
+            <!-- Keywords -->
+            <div class="rounded-xl border border-slate-200 p-3">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-sm font-semibold">키워드 +10</span>
+                  <button class="infoBtn group relative inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 hover:bg-slate-50"
+                          type="button"
+                          data-detail="keywords">
+                    i
+                    <!-- Tooltip -->
+                    <span class="pointer-events-none absolute -top-2 left-7 hidden w-56 rounded-xl border border-slate-200 bg-white p-2 text-left text-[11px] text-slate-700 shadow-sm group-hover:block">
+                      모니터링 범위(브랜드/인물/키워드)를 늘립니다.
+                    </span>
+                  </button>
+                </div>
+                <span class="text-sm font-bold text-slate-900">₩200,000</span>
+              </div>
+              <div class="mt-2 flex items-center gap-2">
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="kwAdd" data-step="-1" type="button">-</button>
+                <input id="kwAdd" class="w-20 rounded-lg border border-slate-200 px-2 py-1 text-sm text-center" value="0" inputmode="numeric" />
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="kwAdd" data-step="1" type="button">+</button>
+                <div class="text-xs text-slate-500">개(10개 단위)</div>
+              </div>
+            </div>
+
+            <!-- Seats -->
+            <div class="rounded-xl border border-slate-200 p-3">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-sm font-semibold">좌석 +1</span>
+                  <button class="infoBtn group relative inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 hover:bg-slate-50"
+                          type="button"
+                          data-detail="seats">
+                    i
+                    <span class="pointer-events-none absolute -top-2 left-7 hidden w-56 rounded-xl border border-slate-200 bg-white p-2 text-left text-[11px] text-slate-700 shadow-sm group-hover:block">
+                      팀 확장용. 보기 전용/편집 가능 좌석 정책은 계약 시 조정.
+                    </span>
+                  </button>
+                </div>
+                <span class="text-sm font-bold text-slate-900">₩50,000</span>
+              </div>
+              <div class="mt-2 flex items-center gap-2">
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="seatAdd" data-step="-1" type="button">-</button>
+                <input id="seatAdd" class="w-20 rounded-lg border border-slate-200 px-2 py-1 text-sm text-center" value="0" inputmode="numeric" />
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="seatAdd" data-step="1" type="button">+</button>
+                <div class="text-xs text-slate-500">석</div>
+              </div>
+            </div>
+
+            <!-- DC -->
+            <div class="rounded-xl border border-slate-200 p-3">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-sm font-semibold">수집 DC +50k</span>
+                  <button class="infoBtn group relative inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 hover:bg-slate-50"
+                          type="button"
+                          data-detail="dc">
+                    i
+                    <span class="pointer-events-none absolute -top-2 left-7 hidden w-64 rounded-xl border border-slate-200 bg-white p-2 text-left text-[11px] text-slate-700 shadow-sm group-hover:block">
+                      크롤링/정제/중복제거/인덱싱 등 클라우드 수집 자원(월 처리량).
+                    </span>
+                  </button>
+                </div>
+                <span class="text-sm font-bold text-slate-900">₩600,000</span>
+              </div>
+              <div class="mt-2 flex items-center gap-2">
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="dcAdd" data-step="-1" type="button">-</button>
+                <input id="dcAdd" class="w-20 rounded-lg border border-slate-200 px-2 py-1 text-sm text-center" value="0" inputmode="numeric" />
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="dcAdd" data-step="1" type="button">+</button>
+                <div class="text-xs text-slate-500">단위(50k)</div>
+              </div>
+            </div>
+
+            <!-- AC -->
+            <div class="rounded-xl border border-slate-200 p-3">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-sm font-semibold">AI AC +10k</span>
+                  <button class="infoBtn group relative inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 hover:bg-slate-50"
+                          type="button"
+                          data-detail="ac">
+                    i
+                    <span class="pointer-events-none absolute -top-2 left-7 hidden w-64 rounded-xl border border-slate-200 bg-white p-2 text-left text-[11px] text-slate-700 shadow-sm group-hover:block">
+                      AI 요약/인사이트/타임라인 등 생성형 기능 사용량(월).
+                    </span>
+                  </button>
+                </div>
+                <span class="text-sm font-bold text-slate-900">₩400,000</span>
+              </div>
+              <div class="mt-2 flex items-center gap-2">
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="acAdd" data-step="-1" type="button">-</button>
+                <input id="acAdd" class="w-20 rounded-lg border border-slate-200 px-2 py-1 text-sm text-center" value="0" inputmode="numeric" />
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="acAdd" data-step="1" type="button">+</button>
+                <div class="text-xs text-slate-500">단위(10k)</div>
+              </div>
+            </div>
+
+            <!-- Backfill -->
+            <div class="rounded-xl border border-slate-200 p-3 sm:col-span-2">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-sm font-semibold">Backfill 1,000 키워드-일</span>
+                  <button class="infoBtn group relative inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 hover:bg-slate-50"
+                          type="button"
+                          data-detail="backfill">
+                    i
+                    <span class="pointer-events-none absolute -top-2 left-7 hidden w-72 rounded-xl border border-slate-200 bg-white p-2 text-left text-[11px] text-slate-700 shadow-sm group-hover:block">
+                      등록 시 과거 데이터 채우기. 예) 10키워드×30일=300 키워드-일.
+                    </span>
+                  </button>
+                </div>
+                <span class="text-sm font-bold text-slate-900">₩150,000</span>
+              </div>
+              <div class="mt-2 flex flex-wrap items-center gap-2">
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="bfAdd" data-step="-1" type="button">-</button>
+                <input id="bfAdd" class="w-20 rounded-lg border border-slate-200 px-2 py-1 text-sm text-center" value="0" inputmode="numeric" />
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="bfAdd" data-step="1" type="button">+</button>
+
+                <div class="ml-2 flex items-center gap-2">
+                  <label class="text-xs font-semibold text-slate-600">실시간 업그레이드</label>
+                  <select id="realtimeUp" class="rounded-lg border border-slate-200 bg-white px-2 py-1 text-sm">
+                    <option value="none" selected>없음</option>
+                    <option value="15to5">15분 → 5분 (+₩800,000)</option>
+                    <option value="5to1">5분 → 1분 (+₩2,000,000)</option>
+                  </select>
+                </div>
+
+                <button id="resetBtn" class="ml-auto rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold hover:bg-slate-100" type="button">
+                  초기화
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 grid gap-3 md:grid-cols-2">
+            <div class="rounded-xl bg-slate-50 p-4">
+              <div class="text-xs font-semibold text-slate-600">예상 월 요금(예시)</div>
+              <div id="estMonthly" class="mt-1 text-2xl font-bold">₩0</div>
+              <div class="mt-1 text-xs text-slate-500">VAT 별도, 실제 계약/범위에 따라 변동</div>
+            </div>
+            <div class="rounded-xl bg-slate-50 p-4">
+              <div class="text-xs font-semibold text-slate-600">예상 연 요금(15% 절감, 예시)</div>
+              <div id="estAnnual" class="mt-1 text-2xl font-bold">₩0</div>
+              <div class="mt-1 text-xs text-slate-500">월 요금 × 12 × 0.85</div>
+            </div>
+          </div>
+
+          <div class="mt-3 text-xs text-slate-600">
+            ✔️ 의사결정 팁: “기능은 Pro로 충분한데, <span class="font-semibold">키워드만 늘리기</span>”, “AI를 더 쓰고 싶어서 <span class="font-semibold">AC만 증량</span>” 같은 식으로 조합하면 됩니다.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compare -->
+  <section id="compare" class="mx-auto max-w-7xl px-4 pb-10">
+    <div class="mb-4">
+      <h2 class="text-lg font-bold">플랜별 포함/기능 비교</h2>
+      <p class="mt-1 text-sm text-slate-600">
+        궁금한 항목을 클릭하면 바로 아래에서 <span class="font-semibold">쉬운 말 + 예시</span>로 설명이 펼쳐집니다.
+      </p>
+    </div>
+
+    <!-- Category: Collection -->
+    <div class="rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <div class="border-b px-5 py-4">
+        <div class="text-sm font-bold">데이터 수집 (클라우드 리소스 포함)</div>
+        <div class="mt-1 text-xs text-slate-500">크롤링/정제/중복제거/인덱싱 등 “수집 인프라 비용”이 포함됩니다.</div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[760px] text-sm">
+          <thead class="bg-slate-50 text-slate-600">
+            <tr>
+              <th class="px-5 py-3 text-left font-semibold">항목</th>
+              <th class="px-5 py-3 text-left font-semibold">Basic</th>
+              <th class="px-5 py-3 text-left font-semibold">Pro</th>
+              <th class="px-5 py-3 text-left font-semibold">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="collectionMode" type="button">
+                  수집 방식(키워드 등록 이후 수집)
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">O</td>
+              <td class="px-5 py-3 text-slate-700">O</td>
+              <td class="px-5 py-3 text-slate-700">O</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="collectionMode">
+              <td colspan="4" class="px-5 py-4 bg-indigo-50">
+                <div class="text-sm font-bold text-slate-900">수집 방식(키워드 등록 이후 수집)</div>
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>이 서비스는 <b>모든 데이터를 미리 전부 저장하는 방식</b>이 아니라,</p>
+                  <p class="mt-1"><b>키워드 등록 시점부터 필요한 데이터만 수집</b>합니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>장점: 불필요한 수집 비용을 줄이고, 필요한 것에 리소스를 집중합니다.</li>
+                    <li>과거 데이터가 필요할 때만 Backfill로 선택적으로 채웁니다.</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="channels" type="button">
+                  채널 커버리지
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">국내 핵심</td>
+              <td class="px-5 py-3 text-slate-700">국내 풀</td>
+              <td class="px-5 py-3 text-slate-700">국내+글로벌(협의)</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="channels">
+              <td colspan="4" class="px-5 py-4 bg-indigo-50">
+                <div class="text-sm font-bold text-slate-900">채널 커버리지</div>
+                <div class="mt-2 text-sm text-slate-700">
+                  <p><b>채널 커버리지</b>는 어떤 소스까지 수집/분석하는지입니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>국내 핵심: 유튜브/뉴스/커뮤니티 중심</li>
+                    <li>국내 풀: SNS 포함</li>
+                    <li>글로벌: 해외 소스 포함(협의/범위 확정 필요)</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="realtime" type="button">
+                  수집 주기(실시간성)
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">15분</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">5분</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">1분/준실시간(옵션)</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="realtime">
+              <td colspan="4" class="px-5 py-4 bg-indigo-50">
+                <div class="text-sm font-bold text-slate-900">수집 주기(실시간성)</div>
+                <div class="mt-2 text-sm text-slate-700">
+                  <p><b>수집 주기</b>는 '얼마나 자주 업데이트되는지'입니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>위기 대응/이슈 모니터링은 1~5분 단위가 유리합니다.</li>
+                    <li>일반 리서치/월간 보고는 15분 이상으로도 충분한 경우가 많습니다.</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="backfill" type="button">
+                  과거 데이터 소급 수집(Backfill)
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">0일(옵션)</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">30일(조건부 포함)</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">확장(팩/협의)</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="backfill">
+              <td colspan="4" class="px-5 py-4 bg-indigo-50">
+                <div class="text-sm font-bold text-slate-900">Backfill(과거 데이터 소급 수집)</div>
+                <div class="mt-2 text-sm text-slate-700">
+                  <p><b>Backfill</b>은 키워드를 등록한 시점에 "과거 데이터"를 추가로 채워주는 기능입니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>기본은 <b>키워드 등록 이후</b>부터 수집합니다. (불필요한 데이터까지 미리 쌓지 않음)</li>
+                    <li>다만 "지난달부터 무슨 일이 있었는지" 같은 요구가 있으면 Backfill로 소급합니다.</li>
+                  </ul>
+                  <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
+                    <b>키워드-일</b> 개념: 10키워드 × 30일 = 300 키워드-일<br/>
+                    즉, 키워드가 많고 소급 기간이 길수록 비용이 늘어나는 '버스트 작업'입니다.
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="dc" type="button">
+                  월 수집 용량(DC)
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">50k 포함</td>
+              <td class="px-5 py-3 text-slate-700">120k 포함</td>
+              <td class="px-5 py-3 text-slate-700">250k+ 협의</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="dc">
+              <td colspan="4" class="px-5 py-4 bg-indigo-50">
+                <div class="text-sm font-bold text-slate-900">DC(수집 크레딧)</div>
+                <div class="mt-2 text-sm text-slate-700">
+                  <p><b>DC</b>는 "데이터 수집에 드는 클라우드 리소스(월 처리량)"입니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>크롤링, 정제, 중복 제거, 인덱싱 등 수집 파이프라인 비용이 포함됩니다.</li>
+                    <li>키워드가 많거나 채널 범위가 넓을수록 DC가 더 필요합니다.</li>
+                  </ul>
+                  <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
+                    의사결정 포인트: "우리 조직이 월간 얼마나 많은 콘텐츠를 모아야 하는가?"
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Category: Analysis -->
+    <div class="mt-4 rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <div class="border-b px-5 py-4">
+        <div class="text-sm font-bold">분석 & 탐색 (대시보드)</div>
+        <div class="mt-1 text-xs text-slate-500">“데이터는 있는데 인사이트가 없다”를 해결하는 구간입니다.</div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[760px] text-sm">
+          <thead class="bg-slate-50 text-slate-600">
+            <tr>
+              <th class="px-5 py-3 text-left font-semibold">항목</th>
+              <th class="px-5 py-3 text-left font-semibold">Basic</th>
+              <th class="px-5 py-3 text-left font-semibold">Pro</th>
+              <th class="px-5 py-3 text-left font-semibold">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="trendSentiment" type="button">
+                  언급량/감성/이슈 탐지
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">기본</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">고급(규칙/필터)</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">맞춤(협의)</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="trendSentiment">
+              <td colspan="4" class="px-5 py-4 bg-indigo-50">
+                <div class="text-sm font-bold text-slate-900">언급량/감성/이슈 탐지</div>
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>실무자가 '지금 무슨 일이 벌어졌는지'를 빠르게 파악하는 기본 세트입니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>언급량 추이: 언제/얼마나 늘었는지</li>
+                    <li>감성: 긍정/부정/중립 비율</li>
+                    <li>이슈 탐지: 급증/변곡점을 자동으로 표시</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="compare" type="button">
+                  경쟁사/키워드 비교
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">제한</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">포함</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">대규모</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="compare">
+              <td colspan="4" class="px-5 py-4 bg-indigo-50">
+                <div class="text-sm font-bold text-slate-900">경쟁사/키워드 비교</div>
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>"우리만 보면 안 되고, 비교가 있어야 의미가 있다"를 해결합니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>브랜드 간 언급량/감성/채널 분포 비교</li>
+                    <li>경쟁 이슈 발생 시 상대 변화까지 함께 확인</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="trustScore" type="button">
+                  데이터 신뢰도(커버리지/품질)
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">-</td>
+              <td class="px-5 py-3 text-slate-700">기본</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">고급(근거 강화)</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="trustScore">
+              <td colspan="4" class="px-5 py-4 bg-indigo-50">
+                <div class="text-sm font-bold text-slate-900">데이터 신뢰도(커버리지/품질)</div>
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>의사결정권자가 가장 많이 묻는 질문: "이 데이터 믿어도 돼?"</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>중복/스팸 제거 수준, 출처 추적, 커버리지 지표 등으로 신뢰도를 보조합니다.</li>
+                    <li>고급 수준은 근거(링크/출처)와 품질 리포트를 강화합니다.</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Category: AI -->
+    <div class="mt-4 rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <div class="border-b px-5 py-4">
+        <div class="text-sm font-bold">AI 기능 (AC 사용량 기반)</div>
+        <div class="mt-1 text-xs text-slate-500">AI는 “기능 사용량”이 늘수록 비용이 커져서, AC로 공정하게 분리합니다.</div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[760px] text-sm">
+          <thead class="bg-slate-50 text-slate-600">
+            <tr>
+              <th class="px-5 py-3 text-left font-semibold">항목</th>
+              <th class="px-5 py-3 text-left font-semibold">Basic</th>
+              <th class="px-5 py-3 text-left font-semibold">Pro</th>
+              <th class="px-5 py-3 text-left font-semibold">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="aiSummary" type="button">
+                  AI 요약
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">O(AC)</td>
+              <td class="px-5 py-3 text-slate-700">O(AC)</td>
+              <td class="px-5 py-3 text-slate-700">O(AC)</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="aiSummary">
+              <td colspan="4" class="px-5 py-4 bg-indigo-50">
+                <div class="text-sm font-bold text-slate-900">AI 요약</div>
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>길고 많은 콘텐츠를 "한 번에 읽히게" 만드는 기능입니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>뉴스/커뮤니티/댓글 등을 요약해 핵심을 빠르게 파악</li>
+                    <li>사용량이 늘수록 AI 비용이 커져 AC로 과금 분리</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="aiInsight" type="button">
+                  AI 인사이트/대응 가이드
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">-</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">포함(AC)</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">포함(AC)</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="aiInsight">
+              <td colspan="4" class="px-5 py-4 bg-indigo-50">
+                <div class="text-sm font-bold text-slate-900">AI 인사이트/대응 가이드</div>
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>단순 요약이 아니라 "왜 발생했는지 / 무엇을 해야 하는지"까지 제안합니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>이슈 원인/핵심 논점/리스크 포인트 정리</li>
+                    <li>커뮤니케이션/대응 문구 템플릿 제공</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="timeline" type="button">
+                  영상 하이라이트(타임라인)
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">옵션(AC)</td>
+              <td class="px-5 py-3 text-slate-700">O(AC)</td>
+              <td class="px-5 py-3 text-slate-700">O(AC)</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="timeline">
+              <td colspan="4" class="px-5 py-4 bg-indigo-50">
+                <div class="text-sm font-bold text-slate-900">영상 하이라이트(타임라인)</div>
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>유튜브 영상 전체를 다 보지 않아도, <b>키워드가 언급된 구간</b>만 빠르게 찾습니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>시간 절감 효과가 크지만 분석 비용도 커서 AC에서 차감</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="ac" type="button">
+                  월 AI 용량(AC)
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">10k 포함</td>
+              <td class="px-5 py-3 text-slate-700">30k 포함</td>
+              <td class="px-5 py-3 text-slate-700">70k+ 협의</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="ac">
+              <td colspan="4" class="px-5 py-4 bg-indigo-50">
+                <div class="text-sm font-bold text-slate-900">AC(AI 크레딧)</div>
+                <div class="mt-2 text-sm text-slate-700">
+                  <p><b>AC</b>는 "AI 기능 사용량(월)"입니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>AI 요약, AI 인사이트, 대응 가이드, 영상 타임라인 등 생성형 기능에서 차감됩니다.</li>
+                    <li>요약보다 '타임라인/심층 인사이트'가 더 많은 비용이 들 수 있어 AC로 분리합니다.</li>
+                  </ul>
+                  <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
+                    의사결정 포인트: "AI를 '가끔' 쓰나, '매일' 리포트처럼 쓰나?"
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Category: Admin -->
+    <div class="mt-4 rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <div class="border-b px-5 py-4">
+        <div class="text-sm font-bold">운영/관리 (결재권자 체크 포인트)</div>
+        <div class="mt-1 text-xs text-slate-500">보관/다운로드/연동/보안은 “도입 후 운영비”를 결정합니다.</div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[760px] text-sm">
+          <thead class="bg-slate-50 text-slate-600">
+            <tr>
+              <th class="px-5 py-3 text-left font-semibold">항목</th>
+              <th class="px-5 py-3 text-left font-semibold">Basic</th>
+              <th class="px-5 py-3 text-left font-semibold">Pro</th>
+              <th class="px-5 py-3 text-left font-semibold">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="retention" type="button">
+                  보관기간(Retention)
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">30일</td>
+              <td class="px-5 py-3 text-slate-700">90일</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">1년+</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="retention">
+              <td colspan="4" class="px-5 py-4 bg-indigo-50">
+                <div class="text-sm font-bold text-slate-900">보관기간(Retention)</div>
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>수집한 데이터를 "얼마나 오래" 보관하는지입니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>보고/감사/추적이 필요하면 보관기간이 중요합니다.</li>
+                    <li>보관이 길수록 저장비/운영비가 늘어 플랜에서 차등됩니다.</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="download" type="button">
+                  다운로드/리포트
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">CSV</td>
+              <td class="px-5 py-3 text-slate-700">CSV/XLSX/PPT</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">맞춤/대용량</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="download">
+              <td colspan="4" class="px-5 py-4 bg-indigo-50">
+                <div class="text-sm font-bold text-slate-900">다운로드/리포트</div>
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>실무에서는 "대시보드도 좋지만, 보고자료로 뽑아야" 결재가 끝납니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>CSV/XLSX는 분석팀, PPT는 보고용에 유리합니다.</li>
+                    <li>맞춤 리포트는 Enterprise에서 협의합니다.</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="api" type="button">
+                  API/웹훅/SSO
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">-</td>
+              <td class="px-5 py-3 text-slate-700">옵션</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">포함/협의</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="api">
+              <td colspan="4" class="px-5 py-4 bg-indigo-50">
+                <div class="text-sm font-bold text-slate-900">API/웹훅/SSO</div>
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>조직이 커질수록 "연동/보안"이 도입의 핵심 조건이 됩니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>API/웹훅: 다른 시스템(Jira/Slack/BI 등)과 연결</li>
+                    <li>SSO/감사로그: 보안/접근통제/감사 대응</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact -->
+  <footer id="contact" class="border-t bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-10">
+      <div class="grid gap-6 md:grid-cols-2 md:items-center">
+        <div>
+          <div class="text-lg font-bold">도입/확장 상담</div>
+          <div class="mt-1 text-sm text-slate-600">
+            “기능은 Pro로, 키워드/AI/좌석만 증량” 같은 방식으로<br class="hidden md:block" />
+            가장 합리적인 조합을 같이 만들 수 있습니다.
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-3 md:justify-end">
+          <a href="#calculator" class="rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-500">예산 계산으로 시작</a>
+          <a href="#" class="rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 hover:bg-slate-100">문의하기(연결)</a>
+        </div>
+      </div>
+
+      <div class="mt-8 text-xs text-slate-500">
+        © 2026 Real-time Listening. Pricing page draft.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ---------------------------
+    // Pricing + UI logic
+    // ---------------------------
+    const DISCOUNT_ANNUAL = 0.15; // example
+
+    const PLAN_MONTHLY = {
+      basic: 1500000,
+      pro: 4900000,
+      ent: 12000000 // base anchor; enterprise is "~"
+    };
+
+    const OPTION_PRICES = {
+      kw10: 200000,     // per +10 keywords
+      seat1: 50000,     // per seat
+      dc50k: 600000,    // per +50k DC
+      ac10k: 400000,    // per +10k AC
+      bf1000: 150000,   // per +1,000 keyword-days
+      rt_15to5: 800000,
+      rt_5to1: 2000000
+    };
+
+    // Details content (decision-maker friendly)
+    const DETAILS = {
+      keywords: {
+        title: "키워드(+10)",
+        body: `
+          <p><b>키워드</b>는 모니터링할 브랜드/제품/인물/이슈 단어입니다.</p>
+          <ul class="mt-2 list-disc pl-5 space-y-1">
+            <li>키워드가 늘어나면, 그만큼 수집/분석 대상이 넓어집니다.</li>
+            <li>실무에서는 “사업부/브랜드 수”가 늘어날 때 키워드를 주로 증량합니다.</li>
+          </ul>
+          <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
+            예) ‘SK hynix’, ‘HBM’, ‘메모리’, ‘경쟁사명’처럼 키워드가 늘수록 커버리지가 넓어집니다.
+          </div>
+        `
+      },
+      seats: {
+        title: "좌석(+1)",
+        body: `
+          <p><b>좌석</b>은 서비스를 쓰는 사용자 수(팀 확장)입니다.</p>
+          <ul class="mt-2 list-disc pl-5 space-y-1">
+            <li>보고용(보기 전용) 인원이 많으면 좌석을 늘리는 경우가 많습니다.</li>
+            <li>필요 시 “보기 전용(저렴)”과 “편집 가능(표준)”을 분리할 수 있습니다.</li>
+          </ul>
+        `
+      },
+      dc: {
+        title: "DC(수집 크레딧)",
+        body: `
+          <p><b>DC</b>는 “데이터 수집에 드는 클라우드 리소스(월 처리량)”입니다.</p>
+          <ul class="mt-2 list-disc pl-5 space-y-1">
+            <li>크롤링, 정제, 중복 제거, 인덱싱 등 수집 파이프라인 비용이 포함됩니다.</li>
+            <li>키워드가 많거나 채널 범위가 넓을수록 DC가 더 필요합니다.</li>
+          </ul>
+          <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
+            의사결정 포인트: “우리 조직이 월간 얼마나 많은 콘텐츠를 모아야 하는가?”
+          </div>
+        `
+      },
+      ac: {
+        title: "AC(AI 크레딧)",
+        body: `
+          <p><b>AC</b>는 “AI 기능 사용량(월)”입니다.</p>
+          <ul class="mt-2 list-disc pl-5 space-y-1">
+            <li>AI 요약, AI 인사이트, 대응 가이드, 영상 타임라인 등 생성형 기능에서 차감됩니다.</li>
+            <li>요약보다 ‘타임라인/심층 인사이트’가 더 많은 비용이 들 수 있어 AC로 분리합니다.</li>
+          </ul>
+          <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
+            의사결정 포인트: “AI를 ‘가끔’ 쓰나, ‘매일’ 리포트처럼 쓰나?”
+          </div>
+        `
+      },
+      backfill: {
+        title: "Backfill(과거 데이터 소급 수집)",
+        body: `
+          <p><b>Backfill</b>은 키워드를 등록한 시점에 “과거 데이터”를 추가로 채워주는 기능입니다.</p>
+          <ul class="mt-2 list-disc pl-5 space-y-1">
+            <li>기본은 <b>키워드 등록 이후</b>부터 수집합니다. (불필요한 데이터까지 미리 쌓지 않음)</li>
+            <li>다만 “지난달부터 무슨 일이 있었는지” 같은 요구가 있으면 Backfill로 소급합니다.</li>
+          </ul>
+          <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
+            <b>키워드-일</b> 개념: 10키워드 × 30일 = 300 키워드-일<br/>
+            즉, 키워드가 많고 소급 기간이 길수록 비용이 늘어나는 ‘버스트 작업’입니다.
+          </div>
+        `
+      },
+      realtime: {
+        title: "수집 주기(실시간성)",
+        body: `
+          <p><b>수집 주기</b>는 ‘얼마나 자주 업데이트되는지’입니다.</p>
+          <ul class="mt-2 list-disc pl-5 space-y-1">
+            <li>위기 대응/이슈 모니터링은 1~5분 단위가 유리합니다.</li>
+            <li>일반 리서치/월간 보고는 15분 이상으로도 충분한 경우가 많습니다.</li>
+          </ul>
+        `
+      },
+      collectionMode: {
+        title: "수집 방식(키워드 등록 이후 수집)",
+        body: `
+          <p>이 서비스는 <b>모든 데이터를 미리 전부 저장하는 방식</b>이 아니라,</p>
+          <p class="mt-1"><b>키워드 등록 시점부터 필요한 데이터만 수집</b>합니다.</p>
+          <ul class="mt-2 list-disc pl-5 space-y-1">
+            <li>장점: 불필요한 수집 비용을 줄이고, 필요한 것에 리소스를 집중합니다.</li>
+            <li>과거 데이터가 필요할 때만 Backfill로 선택적으로 채웁니다.</li>
+          </ul>
+        `
+      },
+      channels: {
+        title: "채널 커버리지",
+        body: `
+          <p><b>채널 커버리지</b>는 어떤 소스까지 수집/분석하는지입니다.</p>
+          <ul class="mt-2 list-disc pl-5 space-y-1">
+            <li>국내 핵심: 유튜브/뉴스/커뮤니티 중심</li>
+            <li>국내 풀: SNS 포함</li>
+            <li>글로벌: 해외 소스 포함(협의/범위 확정 필요)</li>
+          </ul>
+        `
+      },
+      trendSentiment: {
+        title: "언급량/감성/이슈 탐지",
+        body: `
+          <p>실무자가 ‘지금 무슨 일이 벌어졌는지’를 빠르게 파악하는 기본 세트입니다.</p>
+          <ul class="mt-2 list-disc pl-5 space-y-1">
+            <li>언급량 추이: 언제/얼마나 늘었는지</li>
+            <li>감성: 긍정/부정/중립 비율</li>
+            <li>이슈 탐지: 급증/변곡점을 자동으로 표시</li>
+          </ul>
+        `
+      },
+      compare: {
+        title: "경쟁사/키워드 비교",
+        body: `
+          <p>“우리만 보면 안 되고, 비교가 있어야 의미가 있다”를 해결합니다.</p>
+          <ul class="mt-2 list-disc pl-5 space-y-1">
+            <li>브랜드 간 언급량/감성/채널 분포 비교</li>
+            <li>경쟁 이슈 발생 시 상대 변화까지 함께 확인</li>
+          </ul>
+        `
+      },
+      trustScore: {
+        title: "데이터 신뢰도(커버리지/품질)",
+        body: `
+          <p>의사결정권자가 가장 많이 묻는 질문: “이 데이터 믿어도 돼?”</p>
+          <ul class="mt-2 list-disc pl-5 space-y-1">
+            <li>중복/스팸 제거 수준, 출처 추적, 커버리지 지표 등으로 신뢰도를 보조합니다.</li>
+            <li>고급 수준은 근거(링크/출처)와 품질 리포트를 강화합니다.</li>
+          </ul>
+        `
+      },
+      aiSummary: {
+        title: "AI 요약",
+        body: `
+          <p>길고 많은 콘텐츠를 “한 번에 읽히게” 만드는 기능입니다.</p>
+          <ul class="mt-2 list-disc pl-5 space-y-1">
+            <li>뉴스/커뮤니티/댓글 등을 요약해 핵심을 빠르게 파악</li>
+            <li>사용량이 늘수록 AI 비용이 커져 AC로 과금 분리</li>
+          </ul>
+        `
+      },
+      aiInsight: {
+        title: "AI 인사이트/대응 가이드",
+        body: `
+          <p>단순 요약이 아니라 “왜 발생했는지 / 무엇을 해야 하는지”까지 제안합니다.</p>
+          <ul class="mt-2 list-disc pl-5 space-y-1">
+            <li>이슈 원인/핵심 논점/리스크 포인트 정리</li>
+            <li>커뮤니케이션/대응 문구 템플릿 제공</li>
+          </ul>
+        `
+      },
+      timeline: {
+        title: "영상 하이라이트(타임라인)",
+        body: `
+          <p>유튜브 영상 전체를 다 보지 않아도, <b>키워드가 언급된 구간</b>만 빠르게 찾습니다.</p>
+          <ul class="mt-2 list-disc pl-5 space-y-1">
+            <li>시간 절감 효과가 크지만 분석 비용도 커서 AC에서 차감</li>
+          </ul>
+        `
+      },
+      retention: {
+        title: "보관기간(Retention)",
+        body: `
+          <p>수집한 데이터를 “얼마나 오래” 보관하는지입니다.</p>
+          <ul class="mt-2 list-disc pl-5 space-y-1">
+            <li>보고/감사/추적이 필요하면 보관기간이 중요합니다.</li>
+            <li>보관이 길수록 저장비/운영비가 늘어 플랜에서 차등됩니다.</li>
+          </ul>
+        `
+      },
+      download: {
+        title: "다운로드/리포트",
+        body: `
+          <p>실무에서는 “대시보드도 좋지만, 보고자료로 뽑아야” 결재가 끝납니다.</p>
+          <ul class="mt-2 list-disc pl-5 space-y-1">
+            <li>CSV/XLSX는 분석팀, PPT는 보고용에 유리합니다.</li>
+            <li>맞춤 리포트는 Enterprise에서 협의합니다.</li>
+          </ul>
+        `
+      },
+      api: {
+        title: "API/웹훅/SSO",
+        body: `
+          <p>조직이 커질수록 “연동/보안”이 도입의 핵심 조건이 됩니다.</p>
+          <ul class="mt-2 list-disc pl-5 space-y-1">
+            <li>API/웹훅: 다른 시스템(Jira/Slack/BI 등)과 연결</li>
+            <li>SSO/감사로그: 보안/접근통제/감사 대응</li>
+          </ul>
+        `
+      }
+    };
+
+    // Billing toggle (for plan cards only)
+    let billingMode = "monthly"; // monthly | annual
+
+    const monthlyBtn = document.getElementById("billingMonthlyBtn");
+    const annualBtn = document.getElementById("billingAnnualBtn");
+
+    function formatWon(n) {
+      if (!Number.isFinite(n)) return "₩0";
+      return "₩" + Math.round(n).toLocaleString("ko-KR");
+    }
+
+    function setBilling(mode) {
+      billingMode = mode;
+
+      const isMonthly = mode === "monthly";
+      monthlyBtn.className = isMonthly
+        ? "rounded-lg px-3 py-1.5 text-sm font-semibold bg-white shadow-sm"
+        : "rounded-lg px-3 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900";
+      annualBtn.className = !isMonthly
+        ? "rounded-lg px-3 py-1.5 text-sm font-semibold bg-white shadow-sm"
+        : "rounded-lg px-3 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900";
+
+      // Update card prices (annual displays estimated monthly-equivalent or annual? We'll show monthly, but toggle changes to annual-per-month equivalent with note)
+      const planEls = document.querySelectorAll("[data-plan-price]");
+      planEls.forEach(el => {
+        const monthly = Number(el.getAttribute("data-monthly"));
+        if (!Number.isFinite(monthly)) return;
+
+        if (billingMode === "monthly") {
+          el.textContent = formatWon(monthly);
+          el.nextElementSibling && (el.nextElementSibling.textContent = "/ 월 (VAT 별도)");
+        } else {
+          const annualMonthlyEq = monthly * (1 - DISCOUNT_ANNUAL);
+          el.textContent = formatWon(annualMonthlyEq);
+          el.nextElementSibling && (el.nextElementSibling.textContent = "/ 월 (연간 결제 환산, VAT 별도)");
+        }
+      });
+
+      recompute();
+    }
+
+    monthlyBtn.addEventListener("click", () => setBilling("monthly"));
+    annualBtn.addEventListener("click", () => setBilling("annual"));
+
+    // Calculator
+    const planSelect = document.getElementById("planSelect");
+    const kwAdd = document.getElementById("kwAdd");
+    const seatAdd = document.getElementById("seatAdd");
+    const dcAdd = document.getElementById("dcAdd");
+    const acAdd = document.getElementById("acAdd");
+    const bfAdd = document.getElementById("bfAdd");
+    const realtimeUp = document.getElementById("realtimeUp");
+    const estMonthly = document.getElementById("estMonthly");
+    const estAnnual = document.getElementById("estAnnual");
+    const resetBtn = document.getElementById("resetBtn");
+
+    function clampNonNegInt(v) {
+      const n = parseInt(String(v).replace(/[^0-9-]/g, ""), 10);
+      if (!Number.isFinite(n)) return 0;
+      return Math.max(0, n);
+    }
+
+    function recompute() {
+      const plan = planSelect.value;
+      let base = PLAN_MONTHLY[plan] ?? 0;
+
+      // If annual toggle active, show monthly-equivalent on cards, but calculator is "월" 기준으로 유지 (decision makers usually compare monthly),
+      // and annual is computed with discount.
+      // (You can flip this easily later if you want.)
+      const k = clampNonNegInt(kwAdd.value);
+      const s = clampNonNegInt(seatAdd.value);
+      const dc = clampNonNegInt(dcAdd.value);
+      const ac = clampNonNegInt(acAdd.value);
+      const bf = clampNonNegInt(bfAdd.value);
+
+      let options = 0;
+      options += k * OPTION_PRICES.kw10;
+      options += s * OPTION_PRICES.seat1;
+      options += dc * OPTION_PRICES.dc50k;
+      options += ac * OPTION_PRICES.ac10k;
+      options += bf * OPTION_PRICES.bf1000;
+
+      // Realtime upgrade logic (simple)
+      const rt = realtimeUp.value;
+      if (rt === "15to5") options += OPTION_PRICES.rt_15to5;
+      if (rt === "5to1") options += OPTION_PRICES.rt_5to1;
+
+      const monthly = base + options;
+      const annual = monthly * 12 * (1 - DISCOUNT_ANNUAL);
+
+      estMonthly.textContent = formatWon(monthly);
+      estAnnual.textContent = formatWon(annual);
+    }
+
+    // Step buttons
+    document.querySelectorAll(".stepBtn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-target");
+        const step = parseInt(btn.getAttribute("data-step"), 10) || 0;
+        const input = document.getElementById(targetId);
+        if (!input) return;
+        const cur = clampNonNegInt(input.value);
+        input.value = String(Math.max(0, cur + step));
+        recompute();
+      });
+    });
+
+    // Inputs
+    [planSelect, kwAdd, seatAdd, dcAdd, acAdd, bfAdd, realtimeUp].forEach(el => {
+      el.addEventListener("input", recompute);
+      el.addEventListener("change", recompute);
+    });
+
+    resetBtn.addEventListener("click", () => {
+      planSelect.value = "pro";
+      kwAdd.value = "0";
+      seatAdd.value = "0";
+      dcAdd.value = "0";
+      acAdd.value = "0";
+      bfAdd.value = "0";
+      realtimeUp.value = "none";
+      recompute();
+    });
+
+    // Toggle detail rows in comparison tables
+    function toggleDetail(key) {
+      // Find the detail row for this key
+      const detailRow = document.querySelector(`tr.detail-row[data-detail-for="${key}"]`);
+      if (!detailRow) return;
+
+      // Close all other detail rows
+      document.querySelectorAll('tr.detail-row').forEach(row => {
+        if (row !== detailRow) {
+          row.classList.add('hidden');
+        }
+      });
+
+      // Toggle this detail row
+      detailRow.classList.toggle('hidden');
+    }
+
+    document.querySelectorAll(".rowBtn").forEach(btn => {
+      btn.addEventListener("click", () => toggleDetail(btn.getAttribute("data-detail")));
+    });
+    document.querySelectorAll(".infoBtn").forEach(btn => {
+      btn.addEventListener("click", () => toggleDetail(btn.getAttribute("data-detail")));
+    });
+
+    // init
+    setBilling("monthly");
+    recompute();
+  </script>
+</body>
+</html>
