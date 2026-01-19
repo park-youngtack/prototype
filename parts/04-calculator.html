@@ -1,0 +1,199 @@
+  <!-- Calculator (logic-first) -->
+  <section id="calculator" class="mx-auto max-w-7xl px-4 py-8">
+    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h2 class="text-lg font-bold">요금 계산 (합리적 차등: 필요한 것만 증량)</h2>
+          <p class="mt-1 text-sm text-slate-600">
+            기능은 플랜으로 정하고, 금액은 사용량(키워드·좌석·수집·AI·소급)으로 결정합니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-5 grid gap-4 md:grid-cols-3">
+        <!-- Plan -->
+        <div class="rounded-2xl border border-slate-200 p-4">
+          <div class="text-sm font-semibold">1) 플랜 선택</div>
+          <p class="mt-1 text-xs text-slate-500">플랜은 기능 범위를 결정합니다.</p>
+          <label class="mt-3 block text-xs font-semibold text-slate-600">플랜</label>
+          <select id="planSelect" class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+            <option value="basic">Basic (₩1,500,000/월)</option>
+            <option value="pro" selected>Pro (₩4,900,000/월)</option>
+            <option value="ent">Enterprise (₩12,000,000~/월)</option>
+          </select>
+
+          <div class="mt-4 rounded-xl bg-slate-50 p-3 text-xs text-slate-700">
+            <div class="font-semibold">연간 결제</div>
+            <div class="mt-1">월 요금 × 12 × (1 - 15%)</div>
+          </div>
+
+          <div class="mt-3 text-xs text-slate-500">
+            💡 아래 <span class="font-semibold">i</span> 버튼을 클릭하면 각 항목의 설명을 볼 수 있습니다.
+          </div>
+        </div>
+
+        <!-- Usage knobs -->
+        <div class="rounded-2xl border border-slate-200 p-4 md:col-span-2">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <div class="text-sm font-semibold">2) 사용량/규모 증량</div>
+              <p class="mt-1 text-xs text-slate-500">딱 필요한 것만 올리면 됩니다.</p>
+            </div>
+            <div class="text-xs text-slate-500">단가(예시) 기준</div>
+          </div>
+
+          <div class="mt-4 grid gap-3 sm:grid-cols-2">
+            <!-- Keywords -->
+            <div class="rounded-xl border border-slate-200 p-3">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-sm font-semibold">키워드 +10</span>
+                  <button class="infoBtn group relative inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 hover:bg-slate-50"
+                          type="button"
+                          data-detail="keywords">
+                    i
+                    <!-- Tooltip -->
+                    <span class="pointer-events-none absolute -top-2 left-7 hidden w-56 rounded-xl border border-slate-200 bg-white p-2 text-left text-[11px] text-slate-700 shadow-sm group-hover:block">
+                      모니터링 범위(브랜드/인물/키워드)를 늘립니다.
+                    </span>
+                  </button>
+                </div>
+                <span class="text-sm font-bold text-slate-900">₩200,000</span>
+              </div>
+              <div class="mt-2 flex items-center gap-2">
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="kwAdd" data-step="-1" type="button">-</button>
+                <input id="kwAdd" class="w-20 rounded-lg border border-slate-200 px-2 py-1 text-sm text-center" value="0" inputmode="numeric" />
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="kwAdd" data-step="1" type="button">+</button>
+                <div class="text-xs text-slate-500">개(10개 단위)</div>
+              </div>
+            </div>
+
+            <!-- Seats -->
+            <div class="rounded-xl border border-slate-200 p-3">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-sm font-semibold">좌석 +1</span>
+                  <button class="infoBtn group relative inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 hover:bg-slate-50"
+                          type="button"
+                          data-detail="seats">
+                    i
+                    <span class="pointer-events-none absolute -top-2 left-7 hidden w-56 rounded-xl border border-slate-200 bg-white p-2 text-left text-[11px] text-slate-700 shadow-sm group-hover:block">
+                      팀 확장용. 보기 전용/편집 가능 좌석 정책은 계약 시 조정.
+                    </span>
+                  </button>
+                </div>
+                <span class="text-sm font-bold text-slate-900">₩50,000</span>
+              </div>
+              <div class="mt-2 flex items-center gap-2">
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="seatAdd" data-step="-1" type="button">-</button>
+                <input id="seatAdd" class="w-20 rounded-lg border border-slate-200 px-2 py-1 text-sm text-center" value="0" inputmode="numeric" />
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="seatAdd" data-step="1" type="button">+</button>
+                <div class="text-xs text-slate-500">석</div>
+              </div>
+            </div>
+
+            <!-- DC -->
+            <div class="rounded-xl border border-slate-200 p-3">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-sm font-semibold">수집 DC +50k</span>
+                  <button class="infoBtn group relative inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 hover:bg-slate-50"
+                          type="button"
+                          data-detail="dc">
+                    i
+                    <span class="pointer-events-none absolute -top-2 left-7 hidden w-64 rounded-xl border border-slate-200 bg-white p-2 text-left text-[11px] text-slate-700 shadow-sm group-hover:block">
+                      크롤링/정제/중복제거/인덱싱 등 클라우드 수집 자원(월 처리량).
+                    </span>
+                  </button>
+                </div>
+                <span class="text-sm font-bold text-slate-900">₩600,000</span>
+              </div>
+              <div class="mt-2 flex items-center gap-2">
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="dcAdd" data-step="-1" type="button">-</button>
+                <input id="dcAdd" class="w-20 rounded-lg border border-slate-200 px-2 py-1 text-sm text-center" value="0" inputmode="numeric" />
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="dcAdd" data-step="1" type="button">+</button>
+                <div class="text-xs text-slate-500">단위(50k)</div>
+              </div>
+            </div>
+
+            <!-- AC -->
+            <div class="rounded-xl border border-slate-200 p-3">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-sm font-semibold">AI AC +10k</span>
+                  <button class="infoBtn group relative inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 hover:bg-slate-50"
+                          type="button"
+                          data-detail="ac">
+                    i
+                    <span class="pointer-events-none absolute -top-2 left-7 hidden w-64 rounded-xl border border-slate-200 bg-white p-2 text-left text-[11px] text-slate-700 shadow-sm group-hover:block">
+                      AI 요약/인사이트/타임라인 등 생성형 기능 사용량(월).
+                    </span>
+                  </button>
+                </div>
+                <span class="text-sm font-bold text-slate-900">₩400,000</span>
+              </div>
+              <div class="mt-2 flex items-center gap-2">
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="acAdd" data-step="-1" type="button">-</button>
+                <input id="acAdd" class="w-20 rounded-lg border border-slate-200 px-2 py-1 text-sm text-center" value="0" inputmode="numeric" />
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="acAdd" data-step="1" type="button">+</button>
+                <div class="text-xs text-slate-500">단위(10k)</div>
+              </div>
+            </div>
+
+            <!-- Backfill -->
+            <div class="rounded-xl border border-slate-200 p-3 sm:col-span-2">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-sm font-semibold">Backfill 1,000 키워드-일</span>
+                  <button class="infoBtn group relative inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-white text-xs font-bold text-slate-700 hover:bg-slate-50"
+                          type="button"
+                          data-detail="backfill">
+                    i
+                    <span class="pointer-events-none absolute -top-2 left-7 hidden w-72 rounded-xl border border-slate-200 bg-white p-2 text-left text-[11px] text-slate-700 shadow-sm group-hover:block">
+                      등록 시 과거 데이터 채우기. 예) 10키워드×30일=300 키워드-일.
+                    </span>
+                  </button>
+                </div>
+                <span class="text-sm font-bold text-slate-900">₩150,000</span>
+              </div>
+              <div class="mt-2 flex flex-wrap items-center gap-2">
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="bfAdd" data-step="-1" type="button">-</button>
+                <input id="bfAdd" class="w-20 rounded-lg border border-slate-200 px-2 py-1 text-sm text-center" value="0" inputmode="numeric" />
+                <button class="stepBtn rounded-lg border border-slate-200 px-2 py-1 text-sm hover:bg-slate-50" data-target="bfAdd" data-step="1" type="button">+</button>
+
+                <div class="ml-2 flex items-center gap-2">
+                  <label class="text-xs font-semibold text-slate-600">실시간 업그레이드</label>
+                  <select id="realtimeUp" class="rounded-lg border border-slate-200 bg-white px-2 py-1 text-sm">
+                    <option value="none" selected>없음</option>
+                    <option value="15to5">15분 → 5분 (+₩800,000)</option>
+                    <option value="5to1">5분 → 1분 (+₩2,000,000)</option>
+                  </select>
+                </div>
+
+                <button id="resetBtn" class="ml-auto rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-semibold hover:bg-slate-100" type="button">
+                  초기화
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 grid gap-3 md:grid-cols-2">
+            <div class="rounded-xl bg-slate-50 p-4">
+              <div class="text-xs font-semibold text-slate-600">예상 월 요금(예시)</div>
+              <div id="estMonthly" class="mt-1 text-2xl font-bold">₩0</div>
+              <div class="mt-1 text-xs text-slate-500">VAT 별도, 실제 계약/범위에 따라 변동</div>
+            </div>
+            <div class="rounded-xl bg-slate-50 p-4">
+              <div class="text-xs font-semibold text-slate-600">예상 연 요금(15% 절감, 예시)</div>
+              <div id="estAnnual" class="mt-1 text-2xl font-bold">₩0</div>
+              <div class="mt-1 text-xs text-slate-500">월 요금 × 12 × 0.85</div>
+            </div>
+          </div>
+
+          <div class="mt-3 text-xs text-slate-600">
+            ✔️ 의사결정 팁: “기능은 Pro로 충분한데, <span class="font-semibold">키워드만 늘리기</span>”, “AI를 더 쓰고 싶어서 <span class="font-semibold">AC만 증량</span>” 같은 식으로 조합하면 됩니다.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

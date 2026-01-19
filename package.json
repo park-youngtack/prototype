@@ -1,0 +1,19 @@
+{
+  "name": "vibex-platform",
+  "version": "1.0.0",
+  "description": "VibeX Platform - HTML 모듈화 빌드",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "nodemon build.js"
+  },
+  "keywords": [
+    "vibex",
+    "html",
+    "build"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

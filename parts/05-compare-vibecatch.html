@@ -1,0 +1,221 @@
+  <!-- Compare -->
+  <section id="compare" class="mx-auto max-w-7xl px-4 pb-10">
+    <div class="mb-4">
+      <h2 class="text-lg font-bold">플랜별 포함/기능 비교</h2>
+      <p class="mt-1 text-sm text-slate-600">
+        궁금한 항목을 클릭하면 바로 아래에서 <span class="font-semibold">쉬운 말 + 예시</span>로 설명이 펼쳐집니다.
+      </p>
+    </div>
+
+    <!-- VibeCatch Module Section -->
+    <div class="mx-auto max-w-7xl px-4 pb-4 pt-4">
+      <div class="rounded-2xl border-2 border-sky-200 bg-gradient-to-r from-slate-900 to-slate-800 p-6">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="rounded-xl bg-sky-400 p-3">
+              <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentWidth">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-white">VibeCatch</div>
+              <div class="text-sm text-sky-300">놓치지 않는 실시간 여론 모니터링</div>
+            </div>
+          </div>
+          <span class="text-xs bg-sky-400 text-white px-3 py-1 rounded-full">기본 포함</span>
+        </div>
+        <div class="mt-4 text-sm text-slate-300">
+          소셜 미디어, 뉴스, 커뮤니티에서 브랜드 여론을 실시간으로 포착하고 분석합니다.
+        </div>
+      </div>
+    </div>
+
+    <!-- Category: 1. Data Collection (Text) -->
+    <div class="rounded-2xl border border-slate-200 bg-white shadow-sm" data-category="category1">
+      <div class="border-b px-5 py-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="text-sm font-bold">데이터 수집 (텍스트)</div>
+            <div class="mt-1 text-xs text-slate-500">뉴스, 커뮤니티, SNS 등 텍스트 기반 콘텐츠를 수집합니다.</div>
+          </div>
+          <button class="toggleAllBtn text-xs font-semibold text-blue-600 hover:text-slate-700 whitespace-nowrap ml-4" type="button">모두 열기</button>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[760px] text-sm table-fixed">
+          <colgroup>
+            <col style="width: 40%;">
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+          </colgroup>
+          <thead class="bg-slate-50 text-slate-600">
+            <tr>
+              <th class="px-5 py-3 text-left font-semibold">항목</th>
+              <th class="px-5 py-3 text-left font-semibold">Basic</th>
+              <th class="px-5 py-3 text-left font-semibold">Pro</th>
+              <th class="px-5 py-3 text-left font-semibold">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="collectionMode" type="button">
+                  수집 방식(키워드 등록 이후 수집)
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">O</td>
+              <td class="px-5 py-3 text-slate-700">O</td>
+              <td class="px-5 py-3 text-slate-700">O</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="collectionMode">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="text-sm text-slate-700 leading-relaxed">
+                  <p>이 서비스는 <b>모든 데이터를 미리 전부 저장하는 방식</b>이 아니라,</p>
+                  <p class="mt-1"><b>키워드 등록 시점부터 필요한 데이터만 수집</b>합니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>장점: 불필요한 수집 비용을 줄이고, 필요한 것에 리소스를 집중합니다.</li>
+                    <li>과거 데이터가 필요할 때만 Backfill로 선택적으로 채웁니다.</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="channels" type="button">
+                  채널 커버리지
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">국내 핵심</td>
+              <td class="px-5 py-3 text-slate-700">국내 풀</td>
+              <td class="px-5 py-3 text-slate-700">국내+글로벌(협의)</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="channels">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p><b>채널 커버리지</b>는 어떤 소스까지 수집/분석하는지입니다.</p>
+                  <div class="mt-3 rounded-xl bg-white p-3">
+                    <table class="w-full text-xs">
+                      <tr class="border-b"><td class="py-1 font-semibold">국내 핵심</td><td class="py-1">네이버 뉴스, 유튜브, 주요 커뮤니티(디시인사이드, 에펨코리아, 클리앙 등)</td></tr>
+                      <tr class="border-b"><td class="py-1 font-semibold">국내 풀</td><td class="py-1">국내 핵심 + 인스타그램, X(트위터), 네이버 블로그/카페, 틱톡</td></tr>
+                      <tr><td class="py-1 font-semibold">글로벌</td><td class="py-1">국내 풀 + 해외 뉴스, Reddit, 해외 SNS (협의 후 범위 확정)</td></tr>
+                    </table>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="realtime" type="button">
+                  수집 주기(실시간성)
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">15분</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">5분</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">1분/준실시간(옵션)</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="realtime">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p><b>수집 주기</b>는 '얼마나 자주 업데이트되는지'입니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>위기 대응/이슈 모니터링은 1~5분 단위가 유리합니다.</li>
+                    <li>일반 리서치/월간 보고는 15분 이상으로도 충분한 경우가 많습니다.</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="backfill" type="button">
+                  과거 데이터 소급 수집(Backfill)
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">0일(옵션)</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">30일(조건부 포함)</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">확장(팩/협의)</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="backfill">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p><b>Backfill</b>은 키워드를 등록한 시점에 "과거 데이터"를 추가로 채워주는 기능입니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>기본은 <b>키워드 등록 이후</b>부터 수집합니다. (불필요한 데이터까지 미리 쌓지 않음)</li>
+                    <li>다만 "지난달부터 무슨 일이 있었는지" 같은 요구가 있으면 Backfill로 소급합니다.</li>
+                  </ul>
+                  <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
+                    <b>키워드-일</b> 개념: 10키워드 × 30일 = 300 키워드-일<br/>
+                    즉, 키워드가 많고 소급 기간이 길수록 비용이 늘어나는 '버스트 작업'입니다.
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="dc" type="button">
+                  월 수집 용량(DC)
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">50k 포함</td>
+              <td class="px-5 py-3 text-slate-700">120k 포함</td>
+              <td class="px-5 py-3 text-slate-700">250k+ 협의</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="dc">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p><b>DC</b>는 "데이터 수집에 드는 클라우드 리소스(월 처리량)"입니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>크롤링, 정제, 중복 제거, 인덱싱 등 수집 파이프라인 비용이 포함됩니다.</li>
+                    <li>키워드가 많거나 채널 범위가 넓을수록 DC가 더 필요합니다.</li>
+                  </ul>
+                  <div class="mt-3 rounded-xl bg-white p-3 text-xs text-slate-700">
+                    의사결정 포인트: "우리 조직이 월간 얼마나 많은 콘텐츠를 모아야 하는가?"
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Category: 4. Analysis & Insights -->
+    <div class="mt-4 rounded-2xl border border-slate-200 bg-white shadow-sm" data-category="category4">
+      <div class="border-b px-5 py-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="text-sm font-bold">분석 & 인사이트</div>
+            <div class="mt-1 text-xs text-slate-500">수집된 데이터에서 의미 있는 인사이트를 도출합니다.</div>
+          </div>
+          <button class="toggleAllBtn text-xs font-semibold text-blue-600 hover:text-slate-700 whitespace-nowrap ml-4" type="button">모두 열기</button>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[760px] text-sm table-fixed">
+          <colgroup>
+            <col style="width: 40%;">
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+          </colgroup>
+          <thead class="bg-slate-50 text-slate-600">
+            <tr>
+              <th class="px-5 py-3 text-left font-semibold">항목</th>
+              <th class="px-5 py-3 text-left font-semibold">Basic</th>
+              <th class="px-5 py-3 text-left font-semibold">Pro</th>
+              <th class="px-5 py-3 text-left font-semibold">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            <tr class="hover:bg-slate-50">

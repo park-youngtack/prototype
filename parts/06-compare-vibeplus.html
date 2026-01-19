@@ -1,0 +1,500 @@
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="trendSentiment" type="button">
+                  언급량/감성/이슈 탐지
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">기본</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">고급(규칙/필터)</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">맞춤(협의)</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="trendSentiment">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>실무자가 '지금 무슨 일이 벌어졌는지'를 빠르게 파악하는 기본 세트입니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>언급량 추이: 언제/얼마나 늘었는지</li>
+                    <li>감성: 긍정/부정/중립 비율</li>
+                    <li>이슈 탐지: 급증/변곡점을 자동으로 표시</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="compare" type="button">
+                  경쟁사/키워드 비교
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">제한</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">포함</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">대규모</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="compare">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>"우리만 보면 안 되고, 비교가 있어야 의미가 있다"를 해결합니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>브랜드 간 언급량/감성/채널 분포 비교</li>
+                    <li>경쟁 이슈 발생 시 상대 변화까지 함께 확인</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="trustScore" type="button">
+                  데이터 신뢰도(커버리지/품질)
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">-</td>
+              <td class="px-5 py-3 text-slate-700">기본</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">고급(근거 강화)</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="trustScore">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>의사결정권자가 가장 많이 묻는 질문: "이 데이터 믿어도 돼?"</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>중복/스팸 제거 수준, 출처 추적, 커버리지 지표 등으로 신뢰도를 보조합니다.</li>
+                    <li>고급 수준은 근거(링크/출처)와 품질 리포트를 강화합니다.</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Category: 6. Automation/Alert (NEW) -->
+    <div class="mt-4 rounded-2xl border border-slate-200 bg-white shadow-sm" data-category="category6">
+      <div class="border-b px-5 py-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <div class="text-sm font-bold">자동화 / 알림</div>
+              <span class="rounded-full bg-sky-100 px-2 py-0.5 text-xs font-semibold text-slate-700">NEW</span>
+            </div>
+            <div class="mt-1 text-xs text-slate-500">매일 들어와서 확인하지 않아도, 시스템이 알아서 감지하고 알려줍니다.</div>
+          </div>
+          <button class="toggleAllBtn text-xs font-semibold text-blue-600 hover:text-slate-700 whitespace-nowrap ml-4" type="button">모두 열기</button>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[760px] text-sm table-fixed">
+          <colgroup>
+            <col style="width: 40%;">
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+          </colgroup>
+          <thead class="bg-slate-50 text-slate-600">
+            <tr>
+              <th class="px-5 py-3 text-left font-semibold">항목</th>
+              <th class="px-5 py-3 text-left font-semibold">Basic</th>
+              <th class="px-5 py-3 text-left font-semibold">Pro</th>
+              <th class="px-5 py-3 text-left font-semibold">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="riskLevel" type="button">
+                  지능형 리스크 등급 분류
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">-</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">3단계(주의/경고/심각)</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">맞춤 등급+자동 에스컬레이션</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="riskLevel">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>부정적 언급의 확산 속도, 발화자의 영향력 등을 분석해 <b>위기 등급(주의/경고/심각)</b>을 자동 분류합니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>위기 발생 초기 단계에서 심각성을 즉각 파악</li>
+                    <li><b>골든타임 내 대응</b> 가능</li>
+                    <li>Enterprise: 조직별 맞춤 등급 기준 + 자동 에스컬레이션</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="spreadPath" type="button">
+                  이슈 확산 경로 추적
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">-</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">확산 흐름 시각화</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">발원지 분석+차단 제안</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="spreadPath">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>특정 커뮤니티의 게시글이 <b>어떤 뉴스로 번졌는지</b> 등 확산 흐름을 시각화합니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>여론의 발원지를 정확히 타겟팅</li>
+                    <li>불필요한 대응 리소스를 줄이고 <b>전략적 차단</b> 가능</li>
+                    <li>Enterprise: 확산 패턴 분석 + 선제 대응 제안</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="autoDetect" type="button">
+                  이상 징후 자동 감지
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">기본 알림</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">AI 분석 알림</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">맞춤 룰+AI</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="autoDetect">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>설정만 하면 시스템이 <b>이상 징후를 알아서 감지</b>하고 알려줍니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>급격한 언급량 증가/부정 여론 급증 감지</li>
+                    <li>경쟁사 대비 이상 패턴 발견 시 알림</li>
+                    <li>Enterprise: 조직별 맞춤 감지 룰 설정 가능</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="dailyBriefing" type="button">
+                  오늘의 3줄 요약 AI브리핑
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">-</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">매일 아침 발송</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">실시간+맞춤 주기</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="dailyBriefing">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>밤사이 쌓인 모든 데이터를 AI가 읽고 <b>딱 3줄로 오늘의 현황</b>을 브리핑합니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>대시보드 전체를 훑지 않아도 당일 주요 현안과 이슈 우선 순위 파악</li>
+                    <li>실무 밀착형 AI 인사이트와 함께 제공</li>
+                    <li>예) 부정 키워드 '불만' 1위 → 특정 기능의 오류가 반복 언급됨, CS 센터 문의 폭주 예상되니 미리 공지문 게시 및 서버 점검 권고</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="slackBriefing" type="button">
+                  Slack/Teams 자동 브리핑
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">-</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">일간 요약</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">실시간+맞춤</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="slackBriefing">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>대시보드에 들어오지 않아도, <b>"왜 터졌는지 + 지금 할 일"을 정리해서</b> Slack/Teams로 브리핑합니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>매일 아침 자동 일간 요약 발송</li>
+                    <li>이슈 발생 시 실시간 알림 + 대응 가이드</li>
+                    <li>Enterprise: 팀/채널별 맞춤 브리핑 설정</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="autoReport" type="button">
+                  자동 리포트 생성
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">-</td>
+              <td class="px-5 py-3 text-slate-700">옵션</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">포함(맞춤)</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="autoReport">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>주간/월간 리포트를 <b>사람이 만들지 않아도 자동으로 생성</b>합니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>정해진 템플릿에 맞춰 PDF/PPT 자동 생성</li>
+                    <li>이메일/Slack으로 정기 발송</li>
+                    <li>Enterprise: RAG 챗봇으로 리포트 내용 질의 가능</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- VibePlus Module Section -->
+    <div class="mx-auto max-w-7xl px-4 pb-4 pt-8">
+      <div class="rounded-2xl border-2 border-purple-200 bg-gradient-to-r from-slate-900 to-slate-800 p-6">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="rounded-xl bg-purple-500 p-3">
+              <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentWidth">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-white">VibePlus</div>
+              <div class="text-sm text-purple-300">더 깊게, 더 넓게 분석하다</div>
+            </div>
+          </div>
+          <div class="text-right">
+            <span class="text-xs bg-purple-400 text-white px-3 py-1 rounded-full">선택 추가</span>
+            <div class="text-xs text-purple-200 mt-1">Basic +80만원 | Pro +120만원</div>
+          </div>
+        </div>
+        <div class="mt-4 text-sm text-slate-300">
+          영상, AI 플랫폼, 고급 AI 분석 — 프리미엄 수집과 심화 분석을 제공합니다.
+        </div>
+      </div>
+    </div>
+
+    <!-- Category: 2. Video Collection (NEW) -->
+    <div class="mt-4 rounded-2xl border border-slate-200 bg-white shadow-sm" data-category="category2">
+      <div class="border-b px-5 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div>
+              <div class="flex items-center gap-2">
+                <div class="text-sm font-bold">영상 수집</div>
+                <span class="rounded-full bg-sky-100 px-2 py-0.5 text-xs font-semibold text-slate-700">NEW</span>
+              </div>
+              <div class="mt-1 text-xs text-slate-500">텍스트만이 아니라, 쇼츠/릴스/틱톡 영상에서 브랜드 언급까지 수집합니다.</div>
+            </div>
+          </div>
+          <button class="toggleAllBtn text-xs font-semibold text-blue-600 hover:text-slate-700 whitespace-nowrap ml-4" type="button">모두 열기</button>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[760px] text-sm table-fixed">
+          <colgroup>
+            <col style="width: 40%;">
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+          </colgroup>
+          <thead class="bg-slate-50 text-slate-600">
+            <tr>
+              <th class="px-5 py-3 text-left font-semibold">항목</th>
+              <th class="px-5 py-3 text-left font-semibold">Basic</th>
+              <th class="px-5 py-3 text-left font-semibold">Pro</th>
+              <th class="px-5 py-3 text-left font-semibold">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="shortFormVideo" type="button">
+                  숏폼 영상 수집 (쇼츠/릴스/틱톡)
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">-</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">유튜브 쇼츠</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">전체(릴스/틱톡 포함)</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="shortFormVideo">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>영상 내 음성/자막에서 브랜드 언급을 감지합니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>어떤 영상에서 많이 나오는지 파악</li>
+                    <li>댓글/반응 기반으로 여론 분석</li>
+                    <li>숏폼 트렌드에서 브랜드 노출 현황 확인</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="videoHighlight" type="button">
+                  영상 구간 하이라이트
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">-</td>
+              <td class="px-5 py-3 text-slate-700">옵션(AC)</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">포함(AC)</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="videoHighlight">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>브랜드 언급 구간만 타임스탬프로 바로 확인할 수 있습니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>타임스탬프 클릭 → 해당 구간으로 바로 이동</li>
+                    <li>언급 전후 맥락 텍스트도 함께 제공</li>
+                    <li>시간 절감 효과가 크지만 분석 비용이 있어 AC 차감</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="videoCommentAnalysis" type="button">
+                  영상 댓글/반응 분석
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">-</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">O</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">O</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="videoCommentAnalysis">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>영상별 댓글 감성 분석, 반응 트렌드를 파악합니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>영상에 달린 댓글의 긍정/부정 분석</li>
+                    <li>시간대별 반응 추이</li>
+                    <li>주요 키워드 및 논점 추출</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="border-t px-5 py-3 text-xs text-slate-600 bg-slate-50">
+        <b>기대효과:</b> 텍스트 기반 모니터링만으로는 놓치는 영상 콘텐츠까지 커버하여 <b>여론 사각지대 해소</b>
+      </div>
+    </div>
+
+    <!-- Category: 3. AI Platform Monitoring (NEW) -->
+    <div class="mt-4 rounded-2xl border border-slate-200 bg-white shadow-sm" data-category="category3">
+      <div class="border-b px-5 py-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <div class="text-sm font-bold">AI 플랫폼 모니터링</div>
+              <span class="rounded-full bg-sky-100 px-2 py-0.5 text-xs font-semibold text-slate-700">NEW</span>
+            </div>
+            <div class="mt-1 text-xs text-slate-500">"ChatGPT가 우리 브랜드를 뭐라고 설명하지?" — 생성형 AI와 AI 검색에서 브랜드가 어떻게 언급되는지 점검합니다.</div>
+          </div>
+          <button class="toggleAllBtn text-xs font-semibold text-blue-600 hover:text-slate-700 whitespace-nowrap ml-4" type="button">모두 열기</button>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[760px] text-sm table-fixed">
+          <colgroup>
+            <col style="width: 40%;">
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+          </colgroup>
+          <thead class="bg-slate-50 text-slate-600">
+            <tr>
+              <th class="px-5 py-3 text-left font-semibold">항목</th>
+              <th class="px-5 py-3 text-left font-semibold">Basic</th>
+              <th class="px-5 py-3 text-left font-semibold">Pro</th>
+              <th class="px-5 py-3 text-left font-semibold">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="genAiMonitor2" type="button">
+                  생성형 AI 답변 모니터링
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">-</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">주간 리포트</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">실시간+비교</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="genAiMonitor2">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>ChatGPT, Claude, Gemini 등이 브랜드를 어떻게 설명하는지 정기 점검합니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>모델별(GPT, Claude, Gemini 등) 답변을 비교</li>
+                    <li>지난주 대비 바뀐 표현/오해 포인트를 알림</li>
+                    <li>경쟁사와 비교해서 "우리가 어떻게 포지셔닝되는지" 확인</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="aiSearchMonitor2" type="button">
+                  AI 검색 노출 점검
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">-</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">주간 스냅샷</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">일간+알림</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="aiSearchMonitor2">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>Perplexity 등 AI 검색에서 브랜드 검색 시 노출 현황을 점검합니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>어떤 출처를 인용하는지, 어떤 문장으로 답하는지 스냅샷 저장</li>
+                    <li>"노출/서술이 좋아졌나 나빠졌나" 주간 비교</li>
+                    <li>잘못된 정보 발견 시 알림</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="modelCompare" type="button">
+                  모델별 답변 비교
+                </button>
+              </td>
+              <td class="px-5 py-3 text-slate-700">-</td>
+              <td class="px-5 py-3 text-slate-700">-</td>
+              <td class="px-5 py-3 text-slate-700 font-semibold">O</td>
+            </tr>
+            <tr class="detail-row hidden" data-detail-for="modelCompare">
+              <td colspan="4" class="px-5 py-4 bg-slate-50">
+                <div class="mt-2 text-sm text-slate-700">
+                  <p>여러 AI 모델의 답변을 나란히 비교합니다.</p>
+                  <ul class="mt-2 list-disc pl-5 space-y-1">
+                    <li>GPT-4, Claude, Gemini 등 주요 모델 동시 비교</li>
+                    <li>답변 불일치 시 자동 알림</li>
+                    <li>어떤 모델이 우리 브랜드에 유리/불리한지 파악</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50">
+              <td class="px-5 py-3">
+                <button class="rowBtn text-left font-semibold text-slate-900 underline decoration-dotted underline-offset-4"
+                        data-detail="changeTracking" type="button">

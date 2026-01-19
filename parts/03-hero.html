@@ -1,0 +1,144 @@
+  <!-- Hero -->
+  <section class="mx-auto max-w-7xl px-4 pt-10 pb-6">
+    <div class="grid gap-6 md:grid-cols-[1fr_1.2fr] md:items-center">
+      <div>
+        <h1 class="text-3xl font-bold tracking-tight md:text-4xl">
+          필요한 만큼만 늘리는<br class="hidden md:block" />
+          <span class="text-slate-700">VibeX Platform</span> 요금제
+        </h1>
+        <p class="mt-3 text-slate-600">
+          VibeX 플랫폼은 <span class="font-semibold">유튜브·SNS·뉴스를 통합 분석하는 <br/>AI 여론 인텔리전스 플랫폼</span>입니다.<br/>
+          필요한 모듈만 선택해서 사용할 수 있습니다.
+        </p>
+
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="#calculator" class="rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-500">내 예산으로 계산하기</a>
+          <a href="#compare" class="rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 hover:bg-slate-100">플랜 비교 보기</a>
+        </div>
+
+        <div class="mt-4 rounded-xl border border-slate-200 bg-white p-4 text-sm text-slate-700">
+          <div class="font-semibold">핵심 개념(쉽게)</div>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>모든 플랜에 <span class="font-semibold">VibeCatch가 기본 포함</span>됩니다.</li>
+            <li><span class="font-semibold">VibePlus, VibeFlow</span>는 필요 시 선택 추가할 수 있습니다.</li>
+            <li><span class="font-semibold">차등(금액 차이)</span>은 사용량/규모와 추가 모듈로 결정됩니다.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="flex items-center justify-between gap-3">
+          <div>
+            <div class="text-sm font-semibold text-slate-900">결제 방식</div>
+            <div class="text-xs text-slate-500">연간 결제는 15% 절감(예시)</div>
+          </div>
+
+          <div class="inline-flex rounded-xl border border-slate-200 bg-slate-50 p-1" role="tablist" aria-label="Billing toggle">
+            <button id="billingMonthlyBtn" class="rounded-lg px-3 py-1.5 text-sm font-semibold bg-white shadow-sm" type="button">월간</button>
+            <button id="billingAnnualBtn" class="rounded-lg px-3 py-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900" type="button">연간</button>
+          </div>
+        </div>
+
+        <div class="mt-5 grid gap-3 sm:grid-cols-3">
+          <!-- Basic -->
+          <div class="rounded-2xl border border-slate-200 p-4">
+            <div class="text-sm font-semibold">Basic</div>
+            <div class="mt-1 text-xs text-slate-500">파일럿/기본 모니터링</div>
+            <div class="mt-3">
+              <div class="text-2xl font-bold" data-plan-price="basic" data-monthly="1500000">₩1,500,000</div>
+              <div class="text-xs text-slate-500">/ 월 (VAT 별도)</div>
+            </div>
+            <ul class="mt-3 space-y-1 text-xs text-slate-700">
+              <li>• 키워드 10 포함</li>
+              <li>• 좌석 3 포함</li>
+              <li>• 15분 수집 주기</li>
+              <li>• 기본 분석 + AI 요약</li>
+            </ul>
+
+            <!-- 모듈 추가 옵션 -->
+            <div class="mt-6 pt-6 border-t border-slate-200">
+              <div class="text-xs font-semibold text-slate-600 mb-3">선택 추가 모듈</div>
+              <div class="space-y-2">
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-slate-700">+ VibePlus</span>
+                  <span class="font-semibold text-slate-900">+80만원/월</span>
+                </div>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-slate-700">+ VibeFlow</span>
+                  <span class="font-semibold text-slate-900">+50만원/월</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pro (recommended) -->
+          <div class="relative rounded-2xl border-2 border-blue-600 p-4">
+            <div class="absolute -top-3 left-4 rounded-full bg-blue-600 px-2.5 py-1 text-xs font-semibold text-white">추천</div>
+            <div class="text-sm font-semibold">Pro</div>
+            <div class="mt-1 text-xs text-slate-500 whitespace-nowrap">그룹사 실무 확장(메인)</div>
+            <div class="mt-3">
+              <div class="text-2xl font-bold" data-plan-price="pro" data-monthly="4900000">₩4,900,000</div>
+              <div class="text-xs text-slate-500">/ 월 (VAT 별도)</div>
+            </div>
+            <ul class="mt-3 space-y-1 text-xs text-slate-700">
+              <li>• 키워드 50 포함</li>
+              <li>• 좌석 10 포함</li>
+              <li>• 5분 수집 주기</li>
+              <li>• AI 인사이트/뉴스레터 알림</li>
+              <li>• Backfill 30일(조건부 포함)</li>
+            </ul>
+
+            <!-- 모듈 추가 옵션 -->
+            <div class="mt-6 pt-6 border-t border-slate-200">
+              <div class="text-xs font-semibold text-slate-600 mb-3">선택 추가 모듈</div>
+              <div class="space-y-2">
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-slate-700">+ VibePlus</span>
+                  <span class="font-semibold text-slate-900">+120만원/월</span>
+                </div>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-slate-700">+ VibeFlow</span>
+                  <span class="font-semibold text-slate-900">+80만원/월</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="rounded-2xl border border-slate-200 p-4">
+            <div class="text-sm font-semibold">Enterprise</div>
+            <div class="mt-1 text-xs text-slate-500">전사/보안/연동</div>
+            <div class="mt-3">
+              <div class="text-2xl font-bold" data-plan-price="ent" data-monthly="12000000">₩12,000,000~</div>
+              <div class="text-xs text-slate-500">/ 월 (협의, VAT 별도)</div>
+            </div>
+            <ul class="mt-3 space-y-1 text-xs text-slate-700">
+              <li>• SSO/감사로그</li>
+              <li>• API/웹훅</li>
+              <li>• 1분(준실시간) 옵션</li>
+              <li>• RAG 챗봇/자동 리포트</li>
+            </ul>
+
+            <!-- 모듈 추가 옵션 -->
+            <div class="mt-6 pt-6 border-t border-slate-200">
+              <div class="text-xs font-semibold text-slate-600 mb-3">선택 추가 모듈</div>
+              <div class="space-y-2">
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-slate-700">+ VibePlus</span>
+                  <span class="font-semibold text-slate-900">협의</span>
+                </div>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-slate-700">+ VibeFlow</span>
+                  <span class="font-semibold text-slate-900">협의</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 rounded-xl bg-slate-50 p-3 text-xs text-slate-600">
+          ※ 표기 금액/포함량은 <span class="font-semibold">예시 앵커</span>입니다. 실제 계약/원가/범위에 따라 조정 가능합니다.
+        </div>
+      </div>
+    </div>
+  </section>

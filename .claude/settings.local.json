@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git branch:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\n각 카테고리별 ''모두 열기/닫기'' 토글 버튼 추가\n\n## 주요 변경사항\n\n### 기능 추가\n- 각 카테고리 헤더에 ''모두 열기'' 토글 버튼 추가\n- 모든 상세 설명을 한번에 펼칠 수 있는 기능 구현\n- 모든 상세 설명을 한번에 접을 수 있는 토글 기능\n\n### 기술 구현\n- 새로운 toggleAllDetails\\(\\) 함수 추가\n  - 카테고리별로 독립적으로 동작\n  - 모든 detail-row를 상태 변경 \\(열림/닫힘\\)\n  - 버튼 텍스트를 상태에 따라 \"모두 열기\" ↔ \"모두 닫기\"로 변경\n- 각 카테고리에 data-category 속성 추가 \\(category1-8\\)\n- toggleAllBtn 클래스 추가 및 이벤트 리스너 등록\n\n### UI/UX 개선\n- 헤더 오른쪽 상단에 버튼 배치\n- 인디고 색상으로 통일하여 기존 UI와 조화\n- 호버 상태 추가로 인터랙티브성 강화\n\nCo-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git restore:*)",
+      "Bash(python restructure_modules.py:*)",
+      "Bash(python3:*)",
+      "Bash(where:*)",
+      "Bash(\"C:\\\\Users\\\\박영택\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps\\\\python.exe\" restructure_modules.py)",
+      "Bash(python -c:*)",
+      "Bash(python rearrange.py:*)",
+      "Bash(powershell -Command \"cd ''c:\\\\code\\\\문서작업\\\\소셜리스닝''; python rearrange.py\")",
+      "Bash(node rearrange.js:*)",
+      "Bash(del rearrange.py rearrange.js)",
+      "Bash(powershell -Command:*)",
+      "Bash(for:*)",
+      "Bash(done)",
+      "Bash(node build.js:*)",
+      "Bash(ls -lh \"c:\\\\code\\\\문서작업\\\\소셜리스닝\\\\parts\"\" && echo \"---\" && wc -l \"c:code문서작업소셜리스닝parts01-head.html\" \"c:code문서작업소셜리스닝parts02-header.html\" \"c:code문서작업소셜리스닝parts03-hero.html \")"
+    ]
+  }
+}
