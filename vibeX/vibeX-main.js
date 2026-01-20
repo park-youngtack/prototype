@@ -15,7 +15,7 @@ const OPTION_PRICES = {
   kw10: 200000,     // per +10 keywords
   seat1: 50000,     // per seat
   dc50k: 600000,    // per +50k DC
-  ac10k: 400000,    // per +10k AC
+  ac10k: 400000,    // per +10k AC (VibeAI 필수)
   bf1000: 150000,   // per +1,000 keyword-days
   rt_15to5: 800000,
   rt_5to1: 2000000

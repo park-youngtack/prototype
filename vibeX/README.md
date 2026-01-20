@@ -33,7 +33,7 @@ vibeX/
 - 포함: 데이터 수집, 기본 분석, 보기
 - 추가 비용: 키워드, 좌석, DC(수집 크레딧)
 
-**VibePlus** (선택 추가)
+**VibeAI** (선택 추가)
 - AI 기능 추가 모듈
 - 포함: VibeCatch + AI 요약/인사이트
 - 가격: 플랜별로 다름 (Basic/Pro)
@@ -53,7 +53,7 @@ vibeX/
 - Enterprise: ~(협의)
 
 **추가 모듈**
-- ☐ VibePlus 추가 여부 (체크 시 가격 표시)
+- ☐ VibeAI 추가 여부 (체크 시 가격 표시)
 - ☐ VibeFlow 추가 여부 (체크 시 가격 표시)
 
 **옵션 조정**
@@ -62,7 +62,7 @@ vibeX/
 | 키워드 | +10개 | ₩200,000 | 모니터링 대상 키워드 추가 |
 | 좌석 | +1개 | ₩50,000 | 사용자 수 추가 |
 | DC | +50k | ₩600,000 | 월간 데이터 수집량 |
-| AC | +10k | ₩400,000 | AI 기능 사용량 (VibePlus 필수) |
+| AC | +10k | ₩400,000 | AI 기능 사용량 (VibeAI 필수) |
 | Backfill | +1,000 keyword-days | ₩150,000 | 과거 데이터 소급 수집 |
 | 수집 주기 | 15→5분 | ₩800,000 | 실시간성 향상 |
 | 수집 주기 | 5→1분 | ₩2,000,000 | 극도의 실시간성 |
@@ -265,7 +265,7 @@ const DETAILS = {
 **모듈 추가 가격**
 ```javascript
 const MODULE_ADDON_MONTHLY = {
-  vibePlus: { basic: 800000, pro: 1200000, ent: null },
+  vibeAI: { basic: 800000, pro: 1200000, ent: null },
   vibeFlow: { basic: 500000, pro: 800000, ent: null }
 };
 ```
@@ -280,10 +280,10 @@ const MODULE_ADDON_MONTHLY = {
 2. **syncModuleUI(plan)**
    - 플랜별 모듈 가용성 설정
    - Enterprise는 모듈 선택 불가
-   - 추가 가격 라벨 업데이트
+   - 추가 가격 라벨 업데이트 (VibeAI/VibeFlow)
 
 3. **syncAcAvailability()**
-   - VibePlus 미선택 시 AC 입력 비활성화
+   - VibeAI 미선택 시 AC 입력 비활성화
    - AC 카드 시각 처리 (투명도)
 
 4. **clampNonNegInt(v)**
@@ -292,7 +292,7 @@ const MODULE_ADDON_MONTHLY = {
 
 **이벤트 리스너**
 - 플랜 선택 → `recompute()`
-- 모듈 체크 → `recompute()`
+- 모듈 체크 (VibeAI/VibeFlow) → `recompute()`
 - 옵션 입력 → `recompute()`
 - 스텝 버튼 (±) → 값 증감 후 `recompute()`
 - 초기화 버튼 → 모든 값 리셋
@@ -300,7 +300,7 @@ const MODULE_ADDON_MONTHLY = {
 **초기 상태**
 ```javascript
 planSelect.value = "pro";
-modulePlus.checked = false;
+moduleAI.checked = false;
 moduleFlow.checked = false;
 kwAdd.value = "0";
 // ... 등등
@@ -393,23 +393,23 @@ const OPTION_PRICES = {
 
 ### 추가 모듈 가격 수정
 
-**예시: VibePlus Pro 가격 변경 (₩1,200,000 → ₩1,500,000)**
+**예시: VibeAI Pro 가격 변경 (₩1,200,000 → ₩1,500,000)**
 
 1. `vibeX/vibeX-calculator.js` 열기
 2. `MODULE_ADDON_MONTHLY` 섹션 찾기
-3. `vibePlus: { basic: 800000, pro: 1200000, ...}` → `pro: 1500000`
+3. `vibeAI: { basic: 800000, pro: 1200000, ...}` → `pro: 1500000`
 4. 저장
 
 ```javascript
 // Before
 const MODULE_ADDON_MONTHLY = {
-  vibePlus: { basic: 800000, pro: 1200000, ent: null },
+  vibeAI: { basic: 800000, pro: 1200000, ent: null },
   vibeFlow: { basic: 500000, pro: 800000, ent: null }
 };
 
 // After
 const MODULE_ADDON_MONTHLY = {
-  vibePlus: { basic: 800000, pro: 1500000, ent: null },  // Pro 가격 인상
+  vibeAI: { basic: 800000, pro: 1500000, ent: null },  // Pro 가격 인상
   vibeFlow: { basic: 500000, pro: 800000, ent: null }
 };
 ```
@@ -466,7 +466,7 @@ const MODULE_ADDON_MONTHLY = {
 ### 계산기가 동작 안 할 때
 ```bash
 # 1. 브라우저 Console 확인 (F12)
-# 2. DOM ID 확인: id="planSelect" 등이 HTML에 있는지
+# 2. DOM ID 확인: id="moduleAI", id="moduleFlow" 등이 HTML에 있는지
 # 3. JS 파일 로드 확인: 10-scripts.html 확인
 # 4. vibeX-calculator.js의 DOM 요소 선택자와 일치하는지 확인
 ```
@@ -476,7 +476,7 @@ const MODULE_ADDON_MONTHLY = {
 # 1. PLAN_MONTHLY / OPTION_PRICES 값 확인
 # 2. MODULE_ADDON_MONTHLY 값 확인
 # 3. calculatePrice() 함수의 계산 로직 점검
-# 4. VibePlus/VibeFlow 활성화 상태 확인
+# 4. VibeAI/VibeFlow 활성화 상태 확인
 ```
 
 ### 스타일이 깨졌을 때

@@ -4,18 +4,18 @@
 
 // 플랜별 추가 모듈(월) 요금: 상단 Hero 플랜 카드의 표기값을 기준으로 함
 // - VibeCatch는 모든 플랜에 기본 포함(별도 선택 없음)
-// - VibePlus/VibeFlow는 선택 추가
+// - VibeAI/VibeFlow는 선택 추가
 // - Enterprise는 협의(계산기에서는 선택 불가 처리)
 const MODULE_ADDON_MONTHLY = {
-  vibePlus: { basic: 800000, pro: 1200000, ent: null },
+  vibeAI: { basic: 800000, pro: 1200000, ent: null },
   vibeFlow: { basic: 500000, pro: 800000, ent: null }
 };
 
 // DOM elements
 const planSelect = document.getElementById("planSelect");
-const modulePlus = document.getElementById("modulePlus");
+const moduleAI = document.getElementById("moduleAI");
 const moduleFlow = document.getElementById("moduleFlow");
-const modulePlusPrice = document.getElementById("modulePlusPrice");
+const moduleAIPrice = document.getElementById("moduleAIPrice");
 const moduleFlowPrice = document.getElementById("moduleFlowPrice");
 const moduleEntNote = document.getElementById("moduleEntNote");
 const kwAdd = document.getElementById("kwAdd");
@@ -52,9 +52,9 @@ function syncModuleUI(plan) {
   const isEnt = plan === "ent";
 
   // Enterprise는 추가 모듈이 협의라서 계산기에서는 선택을 막음(오해 방지)
-  if (modulePlus) {
-    if (isEnt && modulePlus.checked) modulePlus.checked = false;
-    modulePlus.disabled = isEnt;
+  if (moduleAI) {
+    if (isEnt && moduleAI.checked) moduleAI.checked = false;
+    moduleAI.disabled = isEnt;
   }
   if (moduleFlow) {
     if (isEnt && moduleFlow.checked) moduleFlow.checked = false;
@@ -65,9 +65,9 @@ function syncModuleUI(plan) {
     moduleEntNote.classList.toggle("hidden", !isEnt);
   }
 
-  if (modulePlusPrice) {
-    const addon = MODULE_ADDON_MONTHLY.vibePlus?.[plan];
-    modulePlusPrice.textContent = formatModuleAddon(addon);
+  if (moduleAIPrice) {
+    const addon = MODULE_ADDON_MONTHLY.vibeAI?.[plan];
+    moduleAIPrice.textContent = formatModuleAddon(addon);
   }
   if (moduleFlowPrice) {
     const addon = MODULE_ADDON_MONTHLY.vibeFlow?.[plan];
@@ -75,12 +75,12 @@ function syncModuleUI(plan) {
   }
 }
 
-function isVibePlusSelected() {
-  return Boolean(modulePlus && modulePlus.checked && !modulePlus.disabled);
+function isVibeAISelected() {
+  return Boolean(moduleAI && moduleAI.checked && !moduleAI.disabled);
 }
 
 function syncAcAvailability() {
-  const enabled = isVibePlusSelected();
+  const enabled = isVibeAISelected();
 
   if (acAdd) {
     if (!enabled && clampNonNegInt(acAdd.value) !== 0) acAdd.value = "0";
@@ -112,8 +112,8 @@ function recompute() {
 
   let options = 0;
   // 추가 모듈(선택)
-  if (modulePlus && modulePlus.checked && !modulePlus.disabled) {
-    options += getModuleAddonMonthly("vibePlus", plan);
+  if (moduleAI && moduleAI.checked && !moduleAI.disabled) {
+    options += getModuleAddonMonthly("vibeAI", plan);
   }
   if (moduleFlow && moduleFlow.checked && !moduleFlow.disabled) {
     options += getModuleAddonMonthly("vibeFlow", plan);
@@ -152,14 +152,14 @@ document.querySelectorAll(".stepBtn").forEach(btn => {
 });
 
 // Inputs
-[planSelect, modulePlus, moduleFlow, kwAdd, seatAdd, dcAdd, acAdd, bfAdd, realtimeUp].filter(Boolean).forEach(el => {
+[planSelect, moduleAI, moduleFlow, kwAdd, seatAdd, dcAdd, acAdd, bfAdd, realtimeUp].filter(Boolean).forEach(el => {
   el.addEventListener("input", recompute);
   el.addEventListener("change", recompute);
 });
 
 resetBtn.addEventListener("click", () => {
   planSelect.value = "pro";
-  if (modulePlus) modulePlus.checked = false;
+  if (moduleAI) moduleAI.checked = false;
   if (moduleFlow) moduleFlow.checked = false;
   kwAdd.value = "0";
   seatAdd.value = "0";
