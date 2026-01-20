@@ -107,7 +107,7 @@ function recompute() {
   const k = clampNonNegInt(kwAdd.value);
   const s = clampNonNegInt(seatAdd.value);
   const dc = clampNonNegInt(dcAdd.value);
-  const ac = isVibePlusSelected() ? clampNonNegInt(acAdd.value) : 0;
+  const ac = isVibeAISelected() ? clampNonNegInt(acAdd.value) : 0;
   const bf = clampNonNegInt(bfAdd.value);
 
   let options = 0;
