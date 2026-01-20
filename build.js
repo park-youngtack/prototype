@@ -62,83 +62,17 @@ function buildPage(pageName) {
   console.log(`  크기: ${sizeKB} KB`);
 }
 
-// 루트 index.html 자동 생성 함수
-function generateRootIndex(pages) {
-  const projectsArray = pages.map(pageName => {
-    const readmePath = path.join(__dirname, pageName, 'README.md');
-    let desc = '프로젝트';
+// 각 폴더의 index.html을 루트에 .html 파일로 복사하는 함수
+function copyToRoot(pages) {
+  pages.forEach(pageName => {
+    const sourceFile = path.join(__dirname, pageName, 'index.html');
+    const targetFile = path.join(__dirname, `${pageName}.html`);
 
-    // README.md가 있으면 첫 줄 추출
-    if (fs.existsSync(readmePath)) {
-      const readmeContent = fs.readFileSync(readmePath, 'utf8');
-      const firstLine = readmeContent.split('\n')[2] || '프로젝트';
-      desc = firstLine.replace(/^#+\s+/, '').trim();
+    if (fs.existsSync(sourceFile)) {
+      fs.copyFileSync(sourceFile, targetFile);
+      console.log(`✓ ${pageName}.html 루트에 복사됨`);
     }
-
-    return `            { name: '${pageName.charAt(0).toUpperCase() + pageName.slice(1)}', path: '${pageName}', desc: '${desc}' },`;
-  }).join('\n');
-
-  const indexHtml = `<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>소셜리스닝 - 프로젝트 목록</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-    </style>
-</head>
-<body>
-    <div class="max-w-2xl mx-auto px-4">
-        <div class="bg-white rounded-2xl shadow-2xl p-8">
-            <h1 class="text-4xl font-bold text-center mb-2 text-slate-900">소셜리스닝 프로젝트</h1>
-            <p class="text-center text-slate-600 mb-8">독립적인 웹 페이지들 (${pages.length}개)</p>
-
-            <div class="space-y-4" id="projectList">
-                <!-- 프로젝트 목록이 JavaScript로 동적으로 생성됨 -->
-            </div>
-
-            <div class="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-200">
-                <p class="text-sm text-slate-700">
-                    <strong>💡 팁:</strong> 이 페이지는 자동으로 생성됩니다.
-                    새 프로젝트 폴더를 추가하고 <code class="bg-white px-2 py-1 rounded">npm run build</code>를 실행하면 목록이 자동으로 업데이트됩니다.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // 이 배열은 build.js에서 자동으로 생성됩니다
-        const projects = [
-${projectsArray}
-        ];
-
-        const projectList = document.getElementById('projectList');
-
-        if (projects.length === 0) {
-            projectList.innerHTML = '<p class="text-slate-500 text-center py-8">프로젝트를 찾을 수 없습니다.</p>';
-        } else {
-            projects.forEach(project => {
-                const card = document.createElement('a');
-                card.href = \`./\${project.path}/\`;
-                card.className = 'block p-6 border-2 border-slate-200 rounded-xl hover:border-blue-500 hover:shadow-lg transition-all group';
-                card.innerHTML = \`
-                    <div class="flex items-start justify-between mb-2">
-                        <h2 class="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">\${project.name}</h2>
-                        <span class="text-2xl">→</span>
-                    </div>
-                    <p class="text-slate-600">\${project.desc}</p>
-                \`;
-                projectList.appendChild(card);
-            });
-        }
-    </script>
-</body>
-</html>`;
-
-  fs.writeFileSync(path.join(__dirname, 'index.html'), indexHtml, 'utf8');
-  console.log('✓ 루트 index.html 자동 생성됨');
+  });
 }
 
 // 메인 로직
@@ -149,9 +83,9 @@ if (targetPage) {
   console.log(`\n🔨 ${targetPage} 빌드 시작...\n`);
   buildPage(targetPage);
 
-  // 루트 index.html 업데이트
+  // 루트에 .html 파일로 복사
   const pages = getPageList();
-  generateRootIndex(pages);
+  copyToRoot(pages);
   console.log('');
 } else {
   // 모든 페이지 빌드
@@ -167,8 +101,8 @@ if (targetPage) {
     console.log('');
   });
 
-  // 루트 index.html 업데이트
-  generateRootIndex(pages);
+  // 루트에 .html 파일로 복사
+  copyToRoot(pages);
   console.log('');
   console.log('✅ 전체 빌드 완료!');
 }
