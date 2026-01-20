@@ -4,11 +4,11 @@ npm-debug.log
 yarn-error.log
 
 # Build output
-vibeX/index.html
+# vibeX/index.html 은 GitHub Pages에서 필요하므로 버전 관리에 포함
+# pageA, pageB, pageC는 미래에 추가될 때 같이 포함
 pageA/index.html
 pageB/index.html
 pageC/index.html
-*/index.html
 
 # Legacy
 vibeX.html
