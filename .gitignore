@@ -4,14 +4,15 @@ npm-debug.log
 yarn-error.log
 
 # Build output
-# vibeX.html과 vibeX/index.html 은 GitHub Pages에서 필요하므로 버전 관리에 포함
+# 각 페이지의 index.html은 GitHub Pages에서 필요하므로 버전 관리에 포함
 # pageA, pageB, pageC는 미래에 추가될 때 같이 포함
 pageA/index.html
 pageB/index.html
 pageC/index.html
-pageA.html
-pageB.html
-pageC.html
+
+# Root .html files (빌드 산출물 - 폴더 구조로 충분)
+*.html
+!index.html
 
 # OS files
 .DS_Store

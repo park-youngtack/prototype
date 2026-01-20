@@ -62,19 +62,6 @@ function buildPage(pageName) {
   console.log(`  크기: ${sizeKB} KB`);
 }
 
-// 각 폴더의 index.html을 루트에 .html 파일로 복사하는 함수
-function copyToRoot(pages) {
-  pages.forEach(pageName => {
-    const sourceFile = path.join(__dirname, pageName, 'index.html');
-    const targetFile = path.join(__dirname, `${pageName}.html`);
-
-    if (fs.existsSync(sourceFile)) {
-      fs.copyFileSync(sourceFile, targetFile);
-      console.log(`✓ ${pageName}.html 루트에 복사됨`);
-    }
-  });
-}
-
 // 메인 로직
 const targetPage = process.argv[2];
 
@@ -82,10 +69,6 @@ if (targetPage) {
   // 특정 페이지만 빌드
   console.log(`\n🔨 ${targetPage} 빌드 시작...\n`);
   buildPage(targetPage);
-
-  // 루트에 .html 파일로 복사
-  const pages = getPageList();
-  copyToRoot(pages);
   console.log('');
 } else {
   // 모든 페이지 빌드
@@ -101,8 +84,5 @@ if (targetPage) {
     console.log('');
   });
 
-  // 루트에 .html 파일로 복사
-  copyToRoot(pages);
-  console.log('');
   console.log('✅ 전체 빌드 완료!');
 }
