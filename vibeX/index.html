@@ -4,29 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VibeX Platform - VibeCatch Pricing</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Small helper for smooth scrolling */
-    html { scroll-behavior: smooth; }
+    /* 부드러운 스크롤 */
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      font-family: Pretendard, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    }
+    pre, code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-variant-ligatures: none;
+      tab-size: 2;
+    }
   </style>
 
 <body class="bg-slate-50 text-slate-900">
   <!-- Top bar -->
   <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
-      <div class="flex items-center gap-3">
-        <div class="h-9 w-9 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-sm">VX</div>
-        <div>
-          <div class="text-sm font-semibold leading-tight">VibeX</div>
-          <div class="text-xs text-slate-500">Beyond Listening</div>
-        </div>
+      <div class="flex items-center gap-6">
+        <a href="./" class="flex items-center gap-3">
+          <div class="h-9 w-9 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-sm">VX</div>
+          <div>
+            <div class="text-sm font-semibold leading-tight">VibeX</div>
+            <div class="text-xs text-slate-500">Beyond Listening</div>
+          </div>
+        </a>
+
+        <nav class="hidden items-center gap-2 md:flex">
+          <a href="#compare" class="rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100">플랜 비교</a>
+          <a href="#calculator" class="rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100">요금 계산</a>
+        </nav>
       </div>
 
-      <div class="flex items-center gap-2">
-        <a href="#compare" class="hidden rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 md:block">플랜 비교</a>
-        <a href="#calculator" class="hidden rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 md:block">요금 계산</a>
-        <a href="#contact" class="rounded-lg bg-slate-900 px-3 py-2 text-sm font-semibold text-white hover:bg-slate-800">데모/문의</a>
-      </div>
+      <a href="../vibeX-intro/" class="rounded-lg bg-blue-600 px-3 py-2 text-sm font-semibold text-white hover:bg-slate-500">VibeX 소개</a>
     </div>
   </header>
   <!-- Hero -->
@@ -1620,17 +1633,22 @@
         </div>
         <div class="flex flex-wrap gap-3 md:justify-end">
           <a href="#calculator" class="rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-500">예산 계산으로 시작</a>
-          <a href="#" class="rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 hover:bg-slate-100">문의하기(연결)</a>
+          <a href="../vibeX-intro/" class="rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 hover:bg-slate-100">VibeX 소개 보기</a>
         </div>
       </div>
 
-      <div class="mt-8 text-xs text-slate-500">
-        © 2026 VibeX Platform. Pricing page draft.
+      <div class="mt-8 border-t border-slate-200 pt-6 text-xs text-slate-500">
+        <div class="leading-5">
+          서울시 관악구 남부순환로 1926 경동제약빌딩 3층, 5층, 8층, 9층<br />
+          대표이사: 손윤정 · 대표전화: 02-3475-2800 · 사업자번호: 214-88-13475
+        </div>
+        <div class="mt-2">
+          ⓒ 2026 인크로스. 모든 권리 보유.
+        </div>
       </div>
     </div>
   </footer>
   <script src="/vibeX/vibeX-main.js"></script>
   <script src="/vibeX/vibeX-calculator.js"></script>
 </body>
-</html>
 </html>

@@ -5,11 +5,13 @@
   "scripts": {
     "build": "node build.js",
     "build:vibeX": "node build.js vibeX",
+    "build:vibeX-intro": "node build.js vibeX-intro",
     "build:pageA": "node build.js pageA",
     "build:pageB": "node build.js pageB",
     "build:pageC": "node build.js pageC",
     "watch": "nodemon build.js",
     "watch:vibeX": "nodemon --watch vibeX build.js vibeX",
+    "watch:vibeX-intro": "nodemon --watch vibeX-intro build.js vibeX-intro",
     "watch:pageA": "nodemon --watch pageA build.js pageA"
   },
   "keywords": [
