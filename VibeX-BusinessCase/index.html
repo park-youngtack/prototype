@@ -1,0 +1,1164 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VibeX 사업화 추진안 | 리스크 대응 자동화 플랫폼</title>
+  <meta name="description" content="리스크 대응 자동화 플랫폼 VibeX 사업화 추진안: 시장 공백, 경쟁사 비교, 수익 모델, 로드맵을 정리한 보고서." />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; overflow-x: hidden; }
+    body {
+      font-family: Pretendard, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+    }
+    pre, code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-variant-ligatures: none;
+      tab-size: 2;
+    }
+  </style>
+<body class="bg-white text-slate-900">
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-6">
+        <a href="#top" class="flex items-center gap-3">
+          <div class="h-9 w-9 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-sm">VX</div>
+          <div>
+            <div class="text-sm font-semibold leading-tight">VibeX</div>
+            <div class="text-xs text-slate-500">Business Case</div>
+          </div>
+        </a>
+
+        <nav class="hidden items-center gap-2 md:flex">
+          <a href="#summary" class="rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100">핵심 요약</a>
+          <a href="#gap" class="rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100">시장 공백</a>
+          <a href="#category" class="rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100">전략 분류</a>
+          <a href="#competitors" class="rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100">경쟁사 분석</a>
+          <a href="#model" class="rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100">수익 모델</a>
+          <a href="#roadmap" class="rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100">로드맵</a>
+          <a href="#appendix" class="rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100">부록</a>
+        </nav>
+      </div>
+
+      <a href="../vibeX-intro/" class="rounded-lg bg-blue-600 px-3 py-2 text-sm font-semibold text-white hover:bg-slate-500">VibeX 소개</a>
+    </div>
+  </header>
+
+
+
+<main id="top" class="bg-slate-950 flex-1 -mt-1">
+  <section class="relative overflow-hidden bg-slate-950">
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950"></div>
+    <div class="absolute inset-0 opacity-40" style="background-image: radial-gradient(circle at 10% 20%, rgba(59,130,246,0.25) 0, transparent 45%), radial-gradient(circle at 70% 15%, rgba(14,165,233,0.18) 0, transparent 50%);"></div>
+    <div class="absolute inset-0 opacity-40" style="background-image: linear-gradient(rgba(148,163,184,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.2) 1px, transparent 1px); background-size: 28px 28px;"></div>
+    <div class="absolute right-[-120px] top-[-60px] h-96 w-96 rounded-full border border-blue-400/30"></div>
+    <div class="absolute right-[-30px] top-[20px] h-72 w-72 rounded-full border border-blue-400/20"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 pt-12 pb-10 md:pt-12 md:pb-14">
+      <div class="grid gap-10 lg:grid-cols-[1.2fr,0.8fr] lg:items-center">
+        <div class="text-white">
+          <div class="flex items-center gap-2 text-sm font-semibold tracking-[0.2em] text-blue-300">
+            <span class="inline-flex h-2.5 w-2.5 items-center justify-center rounded-full border border-blue-300"></span>
+            RISK INTELLIGENCE PLATFORM
+          </div>
+          <h1 class="mt-6 text-4xl font-extrabold tracking-tight md:text-6xl">VibeX</h1>
+          <div class="mt-3 text-3xl font-semibold text-blue-300 md:text-5xl">사업화 추진안</div>
+          <div class="mt-6 flex items-center gap-4 text-base text-white/80">
+            <span class="h-10 w-1 rounded-full bg-blue-400"></span>
+            리스크 대응 자동화 플랫폼
+          </div>
+
+          <div class="mt-10 grid gap-6 md:grid-cols-[1fr,1fr]">
+            <div>
+              <p class="text-xs uppercase tracking-[0.2em] text-white/50">Core Value</p>
+              <p class="mt-3 whitespace-nowrap text-xs leading-relaxed text-white/80 md:text-sm">
+                PR/IR·경영진을 위한 실시간 리스크 인텔리전스 및 대응 운영체계
+              </p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-[0.2em] text-white/50">Key Process</p>
+              <div class="mt-3 flex flex-wrap items-center gap-3 text-sm font-semibold text-white/90">
+                <span class="inline-flex items-center gap-2">신호 포착</span>
+                <span class="text-white/40">›</span>
+                <span class="inline-flex items-center gap-2">이해</span>
+                <span class="text-white/40">›</span>
+                <span class="inline-flex items-center gap-2">실행 자동화</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden lg:block">
+          <div class="relative h-72 w-72 rounded-full border border-blue-400/30"></div>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-wrap items-center justify-between gap-4 text-xs text-white/50">
+        <div class="flex items-center gap-4">
+          <span>2026-01-21</span>
+          <span>CONFIDENTIAL (내부 배포용)</span>
+        </div>
+        <button id="open-slide-deck" type="button" class="rounded-full border border-blue-200/40 bg-blue-500/20 px-4 py-2 text-xs font-semibold text-blue-100 transition hover:bg-blue-500/40 hover:text-white">
+          슬라이드 발표
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="summary" class="bg-slate-900">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h2 class="text-2xl font-semibold text-white md:text-3xl">핵심 요약</h2>
+        </div>
+      </div>
+
+      <div class="mt-8 grid gap-6 md:grid-cols-[2fr,1fr]">
+        <div class="space-y-4">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-lg">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 text-lg">⚠️</span>
+              <div>
+                <h3 class="text-base font-semibold text-blue-200">문제의 본질: 2시간의 정보 격차</h3>
+                <p class="mt-2 text-sm leading-relaxed text-white/80">
+                  이슈는 커뮤니티에서 발화 후 30분 만에 기사화되지만, 기업은 기사 이후에야 인지합니다. 이 &#39;2시간의 대응 공백&#39;이 기업 가치를 결정합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-lg">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 text-lg">🧩</span>
+              <div>
+                <h3 class="text-base font-semibold text-violet-200">VibeX의 정의</h3>
+                <p class="mt-2 text-sm leading-relaxed text-white/80">
+                  단순 분석에서 끝나지 않고 <strong>포착 → 이해 → 실행</strong>을 자동화합니다. PR/IR 부서와 경영진에게 &#39;대응 가능한 골든타임&#39;을 벌어주는 리스크 인텔리전스 시스템입니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-lg">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 text-lg">⚖️</span>
+              <div>
+                <h3 class="text-base font-semibold text-emerald-200">경쟁사 오해 소지 해소</h3>
+                <p class="mt-2 text-sm leading-relaxed text-white/80">
+                  기존 툴(썸트렌드, 퀘타아이 등)은 마케팅 인사이트형 분석 도구입니다. VibeX는 이들이 다루지 않는 <strong>실시간 리스크 대응 워크플로우</strong> 공백 시장을 타겟팅합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-3xl bg-blue-900/80 p-6 shadow-2xl ring-1 ring-blue-400/20">
+          <div class="flex items-center justify-between">
+            <h3 class="text-base font-semibold text-white">VibeX의 핵심 가치</h3>
+          </div>
+          <div class="mt-8">
+            <div class="text-4xl font-extrabold text-white md:text-5xl">80<span class="text-blue-200">%</span></div>
+            <p class="mt-2 text-sm text-blue-100">이상 단축</p>
+            <p class="mt-2 text-xs text-blue-100/80">대응 준비 물리적 시간 절감</p>
+          </div>
+          <ul class="mt-5 space-y-2 text-xs text-blue-100/90">
+            <li>✓ AI 상황 브리핑 및 요약</li>
+            <li>✓ 대응 문구 초안 자동 생성</li>
+            <li>✓ 원클릭 리포트 공유</li>
+          </ul>
+
+          <div class="mt-6 rounded-2xl border border-blue-300/30 bg-blue-800/60 p-5" id="request">
+            <div class="flex items-center gap-2 text-sm font-semibold text-white">
+              <span>✳️</span>
+              요청 사항
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-blue-50">
+              현재의 소셜 리스닝을 상품화 하여, 리스크 대응 시장을 선점하기 위한 <strong>VibeX 플랫폼의 정식 사업화 추진</strong>을 결정해 주시기 바랍니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gap" class="bg-slate-950">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h2 class="text-2xl font-semibold text-white md:text-3xl">시장 공백과 VibeX의 기회</h2>
+        </div>
+      </div>
+
+      <div class="mt-8 grid gap-6 md:grid-cols-[1.1fr,1.4fr]">
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg">
+          <h3 class="text-lg font-semibold text-white">왜 기존 도구들로는 부족한가?</h3>
+          <p class="mt-2 text-sm text-white/70">기존 툴은 대부분 &#39;마케터를 위한 리서치 도구&#39;입니다.</p>
+
+          <div class="mt-6 space-y-5 border-l border-white/10 pl-5">
+            <div>
+              <div class="flex items-center gap-2 text-sm font-semibold text-blue-200">
+                <span class="h-2 w-2 rounded-full bg-blue-400"></span>
+                1. 실시간성 부재
+              </div>
+              <p class="mt-2 text-sm leading-relaxed text-white/70">
+                뉴스 클리핑이나 일 단위 분석 위주로, 분 단위로 급변하는 커뮤니티 여론을 즉각 포착하지 못합니다.
+              </p>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 text-sm font-semibold text-blue-200">
+                <span class="h-2 w-2 rounded-full bg-blue-400"></span>
+                2. 분석에서 멈춤
+              </div>
+              <p class="mt-2 text-sm leading-relaxed text-white/70">
+                &quot;지금 상황이 이렇다&quot;는 리포트는 주지만, &quot;그래서 지금 당장 무엇을, 어떻게 해야 하는가&quot;에 대한 실행 가이드는 부족합니다.
+              </p>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 text-sm font-semibold text-blue-200">
+                <span class="h-2 w-2 rounded-full bg-blue-400"></span>
+                3. 경영진 보고 체계의 부재
+              </div>
+              <p class="mt-2 text-sm leading-relaxed text-white/70">
+                실무자용 대시보드는 화려하지만, 경영진 의사결정을 위한 간결한 브리핑과 대응 초안이 실시간으로 제공되지 않습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <h3 class="text-lg font-semibold text-white">VibeX가 해결하는 3가지 시간</h3>
+            <span class="inline-flex items-center gap-2 rounded-full border border-blue-400/40 bg-blue-500/10 px-3 py-1 text-xs font-semibold text-blue-200">⚡ 기능이 아닌 시간 중심 설계</span>
+          </div>
+
+          <div class="mt-6 space-y-4">
+            <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <span class="inline-flex items-center rounded-full bg-blue-500/20 px-3 py-1 text-xs font-semibold text-blue-200">인지 시간 (Awareness)</span>
+                  <h4 class="mt-3 text-base font-semibold text-white">기사화 전 &#39;골든타임&#39; 확보</h4>
+                  <p class="mt-2 text-sm leading-relaxed text-white/70">
+                    기사가 나기 전, 커뮤니티 급등 시점에 즉시 알림.
+                  </p>
+                  <p class="mt-2 text-xs text-blue-100/80">1분 / 5분 / 15분 주기 실시간 모니터링</p>
+                </div>
+                <div class="text-xl">🔔</div>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <span class="inline-flex items-center rounded-full bg-blue-500/20 px-3 py-1 text-xs font-semibold text-blue-200">설명 시간 (Context)</span>
+                  <h4 class="mt-3 text-base font-semibold text-white">AI 원인 분석 및 요약</h4>
+                  <p class="mt-2 text-sm leading-relaxed text-white/70">
+                    &quot;왜 터졌는가?&quot;를 찾기 위한 수작업 리서치를 제거.
+                  </p>
+                  <p class="mt-2 text-xs text-blue-100/80">AI가 원인, 확산 경로, 핵심 쟁점 자동 요약</p>
+                </div>
+                <div class="text-xl">🤖</div>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <span class="inline-flex items-center rounded-full bg-blue-500/20 px-3 py-1 text-xs font-semibold text-blue-200">실행 시간 (Action)</span>
+                  <h4 class="mt-3 text-base font-semibold text-white">물리적 대응 시간 80% 단축</h4>
+                  <p class="mt-2 text-sm leading-relaxed text-white/70">
+                    텔레그램·슬랙·팀즈 브리핑, 대응 문구 초안, 원클릭 PPT 리포트로 실제 대응까지의 시간을 대폭 절감합니다.
+                  </p>
+                  <p class="mt-2 text-xs text-blue-100/80">브리핑 → 초안 → 리포트 자동 흐름</p>
+                </div>
+                <div class="text-xl">🚀</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="category" class="bg-slate-950">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h2 class="text-2xl font-semibold text-white md:text-3xl">전략적 카테고리 분류</h2>
+        </div>
+        <p class="text-xs text-white/60">"비슷해 보이지만 <strong class="text-white">시장이 다릅니다</strong>"</p>
+      </div>
+
+      <div class="mt-8 grid gap-5 md:grid-cols-3">
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg">💡</div>
+            <div>
+              <h3 class="text-base font-semibold text-white">트렌드 인사이트형</h3>
+              <p class="text-xs text-white/60">Trend Research</p>
+            </div>
+          </div>
+
+          <div class="mt-5 space-y-4 text-sm text-white/80">
+            <div>
+              <p class="text-xs text-white/50">핵심 질문</p>
+              <p class="mt-1 font-semibold text-white">"요즘 무엇이 유행인가?"</p>
+            </div>
+            <div>
+              <p class="text-xs text-white/50">대표 서비스</p>
+              <p class="mt-1">썸트렌드, 퀘타아이</p>
+            </div>
+            <div>
+              <p class="text-xs text-white/50">주요 고객</p>
+              <p class="mt-1">마케터, 트렌드 리서처</p>
+            </div>
+            <div>
+              <p class="text-xs text-white/50">주 가치</p>
+              <p class="mt-1">기획/캠페인 영감</p>
+            </div>
+            <div>
+              <p class="text-xs text-white/50">자동화 수준</p>
+              <div class="mt-2 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs text-white/80">
+                차트 시각화, 요약
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg">🔎</div>
+            <div>
+              <h3 class="text-base font-semibold text-white">검색 인텐트형</h3>
+              <p class="text-xs text-white/60">Search Intent Analysis</p>
+            </div>
+          </div>
+
+          <div class="mt-5 space-y-4 text-sm text-white/80">
+            <div>
+              <p class="text-xs text-white/50">핵심 질문</p>
+              <p class="mt-1 font-semibold text-white">"사람들이 왜 검색하는가?"</p>
+            </div>
+            <div>
+              <p class="text-xs text-white/50">대표 서비스</p>
+              <p class="mt-1">리스닝마인드</p>
+            </div>
+            <div>
+              <p class="text-xs text-white/50">주요 고객</p>
+              <p class="mt-1">전략기획, 상품기획</p>
+            </div>
+            <div>
+              <p class="text-xs text-white/50">주 가치</p>
+              <p class="mt-1">소비자 잠재 니즈 파악</p>
+            </div>
+            <div>
+              <p class="text-xs text-white/50">자동화 수준</p>
+              <div class="mt-2 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs text-white/80">
+                데이터 상관관계 분석
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-blue-400/60 bg-blue-900/80 p-6 shadow-2xl ring-1 ring-blue-400/40">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/30 text-lg">🛡️</div>
+              <div>
+                <h3 class="text-base font-semibold text-white">리스크 대응형</h3>
+                <p class="text-xs text-blue-100/80">Risk Management</p>
+              </div>
+            </div>
+            <span class="rounded-full bg-blue-400/20 px-3 py-1 text-xs font-semibold text-blue-100">VibeX</span>
+          </div>
+
+          <div class="mt-5 space-y-4 text-sm text-blue-50">
+            <div>
+              <p class="text-xs text-blue-100/60">핵심 질문</p>
+              <p class="mt-1 font-semibold text-white">"지금 터진 이슈에 어떻게 대응하나?"</p>
+            </div>
+            <div>
+              <p class="text-xs text-blue-100/60">대표 서비스</p>
+              <p class="mt-1 font-semibold">VibeX Platform</p>
+            </div>
+            <div>
+              <p class="text-xs text-blue-100/60">주요 고객</p>
+              <p class="mt-1 font-semibold">PR, IR, 경영진, 법무</p>
+            </div>
+            <div>
+              <p class="text-xs text-blue-100/60">주 가치</p>
+              <p class="mt-1 font-semibold">브랜드 가치 보호, 골든타임 확보</p>
+            </div>
+            <div>
+              <p class="text-xs text-blue-100/60">자동화 수준</p>
+              <div class="mt-2 inline-flex items-center gap-2 rounded-full border border-blue-300/40 bg-blue-500/30 px-3 py-1 text-xs text-white">
+                대응 초안, 보고서, 알림
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-8 text-sm text-white/60">
+        경쟁사로 언급되는 업체들과 VibeX는 데이터 소스는 유사할 수 있으나, <strong class="text-white">문제를 정의하는 방식</strong>과 <strong class="text-white">구매 결정권자</strong>가 완전히 다릅니다.
+      </p>
+    </div>
+  </section>
+
+  <section id="competitors" class="bg-slate-950">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h2 class="text-2xl font-semibold text-white md:text-3xl">경쟁사 상세 분석</h2>
+        </div>
+      </div>
+
+      <div class="mt-8 space-y-8">
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg">
+          <div class="flex flex-col gap-6 lg:grid lg:grid-cols-[1.1fr,1fr,1fr]">
+            <div class="space-y-4">
+              <div class="rounded-2xl bg-white px-6 py-8 text-center text-2xl font-bold text-slate-900 shadow">
+                Sometrend
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-sm text-white/80">
+                <p class="text-xs text-white/50">한 문장 정의</p>
+                <p class="mt-2 font-semibold text-white">"방대한 데이터의 마케팅 리서처"</p>
+                <p class="mt-4 text-xs text-white/50">주요 타깃</p>
+                <p class="mt-1">마케터, 브랜드 매니저</p>
+                <p class="mt-4 text-xs text-white/50">설립/데이터 축적</p>
+                <p class="mt-1">2008년부터 축적</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-xs text-white/70">
+                <p class="text-white/50">가격 정책(공개)</p>
+                <p class="mt-2">베이직 29,700원 / 프리미엄 149,000원</p>
+                <p>비즈니스 2,000,000원/월 (1~10인)</p>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5 text-sm text-white/80">
+              <div class="flex items-center gap-2 text-base font-semibold text-blue-200">👍 주요 특징</div>
+              <ul class="mt-4 space-y-3">
+                <li class="flex gap-2"><span class="text-blue-400">•</span>2008년부터 축적된 방대한 소셜 데이터 기반 분석</li>
+                <li class="flex gap-2"><span class="text-blue-400">•</span>트렌드/연관어/감성 등 마케팅 리서치에 최적화</li>
+                <li class="flex gap-2"><span class="text-blue-400">•</span>개인~팀 단위 구독 중심의 SaaS 모델</li>
+              </ul>
+            </div>
+
+            <div class="rounded-2xl border border-rose-400/30 bg-slate-900/70 p-5 text-sm text-white/80">
+              <div class="flex items-center gap-2 text-base font-semibold text-rose-300">⚠️ 결정적 한계</div>
+              <ul class="mt-4 space-y-3">
+                <li class="flex gap-2"><span class="text-rose-400">•</span>위기 시 &#39;그래서 어떻게?&#39;에 대한 대응 워크플로우가 약함</li>
+                <li class="flex gap-2"><span class="text-rose-400">•</span>기업용 보안/연동 기능이 상대적으로 부족</li>
+                <li class="flex gap-2"><span class="text-rose-400">•</span>검색/조회 중심 UX로 실시간 위기 대응에 한계</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 rounded-2xl border border-blue-400/40 bg-blue-900/70 p-5 text-white">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/30 text-lg">🛡️</div>
+                <div>
+                  <p class="text-sm font-semibold">"흐름(Flow)이 아닌 위협(Threat)을 봅니다"</p>
+                  <p class="mt-2 text-xs text-white/70">
+                    썸트렌드는 과거부터 현재까지의 트렌드를 보지만, VibeX는 지금 이 순간의 리스크를 포착하고 &#39;대응액션(Action Item)&#39;을 즉시 생성합니다.
+                  </p>
+                </div>
+              </div>
+              <span class="rounded-full bg-blue-500/30 px-3 py-1 text-xs font-semibold text-blue-100">VibeX의 차별점</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg">
+          <div class="flex flex-col gap-6 lg:grid lg:grid-cols-[1.1fr,1fr,1fr]">
+            <div class="space-y-4">
+              <div class="rounded-2xl bg-white px-6 py-8 text-center text-2xl font-bold text-slate-900 shadow">
+                Quetta i
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-sm text-white/80">
+                <p class="text-xs text-white/50">한 문장 정의</p>
+                <p class="mt-2 font-semibold text-white">"AI 기반의 트렌드 요약가"</p>
+                <p class="mt-4 text-xs text-white/50">주요 타깃</p>
+                <p class="mt-1">마케팅팀, 전략기획팀</p>
+                <p class="mt-4 text-xs text-white/50">핵심 기술</p>
+                <p class="mt-1">LLM 기반 AI 요약</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-xs text-white/70">
+                <p class="text-white/50">가격 정책</p>
+                <p class="mt-2">공식 홈페이지 가격 미공개</p>
+                <p>문의 기반 견적</p>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5 text-sm text-white/80">
+              <div class="flex items-center gap-2 text-base font-semibold text-blue-200">🤖 주요 특징</div>
+              <ul class="mt-4 space-y-3">
+                <li class="flex gap-2"><span class="text-blue-400">•</span>여러 채널 데이터를 AI로 요약하여 트렌드 리포트 생성</li>
+                <li class="flex gap-2"><span class="text-blue-400">•</span>드래그 앤 드롭 기반 대시보드 개인화</li>
+                <li class="flex gap-2"><span class="text-blue-400">•</span>실시간 포착 언급은 있으나 분석 중심 설계</li>
+              </ul>
+            </div>
+
+            <div class="rounded-2xl border border-rose-400/30 bg-slate-900/70 p-5 text-sm text-white/80">
+              <div class="flex items-center gap-2 text-base font-semibold text-rose-300">⚠️ 결정적 한계</div>
+              <ul class="mt-4 space-y-3">
+                <li class="flex gap-2"><span class="text-rose-400">•</span>공식 대응 문구/실행 도구가 부족</li>
+                <li class="flex gap-2"><span class="text-rose-400">•</span>조직 내 의사결정 체계(Slack/Teams) 연동 약함</li>
+                <li class="flex gap-2"><span class="text-rose-400">•</span>상황 요약은 가능하나 &#39;상황 종료&#39; 액션 플랜 없음</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 rounded-2xl border border-blue-400/40 bg-blue-900/70 p-5 text-white">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/30 text-lg">⚙️</div>
+                <div>
+                  <p class="text-sm font-semibold">"요약(Summary)을 넘어 해결(Solution)로"</p>
+                  <p class="mt-2 text-xs text-white/70">
+                    퀘타아이가 현상을 브리핑하는 데 집중한다면, VibeX는 상황 종료를 위한 실행 도구(대응 가이드, 협업)를 제공합니다.
+                  </p>
+                </div>
+              </div>
+              <span class="rounded-full bg-blue-500/30 px-3 py-1 text-xs font-semibold text-blue-100">VibeX의 차별점</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg">
+          <div class="flex flex-col gap-6 lg:grid lg:grid-cols-[1.1fr,1fr,1fr]">
+            <div class="space-y-4">
+              <div class="rounded-2xl bg-white px-6 py-8 text-center text-2xl font-bold text-slate-900 shadow">
+                ListeningMind
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-sm text-white/80">
+                <p class="text-xs text-white/50">한 문장 정의</p>
+                <p class="mt-2 font-semibold text-white">"검색 데이터 기반의 인사이트 전략가"</p>
+                <p class="mt-4 text-xs text-white/50">주요 타깃</p>
+                <p class="mt-1">전략기획, 상품기획팀</p>
+                <p class="mt-4 text-xs text-white/50">분석 핵심</p>
+                <p class="mt-1">서치 리스닝(Intent)</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-xs text-white/70">
+                <p class="text-white/50">가격 정책 (USD 기준)</p>
+                <p class="mt-2">Standard $1,800/월</p>
+                <p>Professional $2,700/월</p>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5 text-sm text-white/80">
+              <div class="flex items-center gap-2 text-base font-semibold text-blue-200">🔍 주요 특징</div>
+              <ul class="mt-4 space-y-3">
+                <li class="flex gap-2"><span class="text-blue-400">•</span>검색 데이터를 분석하여 소비자 의도(Intent) 파악</li>
+                <li class="flex gap-2"><span class="text-blue-400">•</span>검색 여정(Customer Journey) 기반 전략 수립 지원</li>
+                <li class="flex gap-2"><span class="text-blue-400">•</span>시장/경쟁 조사 단계에서 인사이트 제공</li>
+              </ul>
+            </div>
+
+            <div class="rounded-2xl border border-rose-400/30 bg-slate-900/70 p-5 text-sm text-white/80">
+              <div class="flex items-center gap-2 text-base font-semibold text-rose-300">⚠️ 결정적 한계</div>
+              <ul class="mt-4 space-y-3">
+                <li class="flex gap-2"><span class="text-rose-400">•</span>실시간 커뮤니티 여론/이슈 감지에 부적합</li>
+                <li class="flex gap-2"><span class="text-rose-400">•</span>데이터 소스가 검색 엔진 중심으로 제한</li>
+                <li class="flex gap-2"><span class="text-rose-400">•</span>경영진용 대응 초안보다 분석 리포트 중심</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 rounded-2xl border border-blue-400/40 bg-blue-900/70 p-5 text-white">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/30 text-lg">🧠</div>
+                <div>
+                  <p class="text-sm font-semibold">"머릿속(검색)이 아닌 입(여론)을 관리합니다"</p>
+                  <p class="mt-2 text-xs text-white/70">
+                    리스닝마인드는 잠재 니즈를 분석해 기획을 돕지만, VibeX는 지금 당장 확산되는 리스크를 포착해 기업의 평판을 방어합니다.
+                  </p>
+                </div>
+              </div>
+              <span class="rounded-full bg-blue-500/30 px-3 py-1 text-xs font-semibold text-blue-100">VibeX의 차별점</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="model" class="bg-slate-950">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h2 class="text-2xl font-semibold text-white md:text-3xl">사업화 추진 전략 및 수익 모델</h2>
+        </div>
+        <p class="text-xs text-white/60">단순 도구가 아닌 <strong class=\"text-white\">&#39;기업 리스크 보험&#39;</strong> 가치 제안</p>
+      </div>
+
+      <div class="mt-8 rounded-2xl border border-white/10 bg-white/5 px-6 py-4 text-sm text-white/80 shadow-lg">
+        <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="text-sm font-semibold text-blue-200">합리적 차등 과금 (Pricing Logic)</p>
+            <p class="mt-1 text-xs text-white/60">"기능은 플랜으로 정의하고, 비용은 실제 사용량(키워드·수집주기·AI 사용량)에 따라 결정"</p>
+          </div>
+          <div class="flex flex-wrap gap-2 text-xs text-white/70">
+            <span class="rounded-full border border-white/10 bg-white/10 px-3 py-1">기본 수집 (VibeCatch)</span>
+            <span class="rounded-full border border-white/10 bg-white/10 px-3 py-1">AI 모듈 (VibeAI)</span>
+            <span class="rounded-full border border-white/10 bg-white/10 px-3 py-1">실행 모듈 (VibeFlow)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 grid gap-6 lg:grid-cols-3">
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 text-white/80 shadow-lg">
+          <h3 class="text-lg font-semibold text-white">Basic</h3>
+          <p class="mt-3 text-3xl font-bold text-white">150<span class="text-base font-medium text-white/60">만 원/월</span></p>
+          <p class="mt-2 text-sm text-white/60">소규모 / 파일럿 모니터링</p>
+          <div class="mt-5 h-px bg-white/10"></div>
+          <ul class="mt-5 space-y-2 text-sm">
+            <li>✓ 주요 커뮤니티 모니터링</li>
+            <li>✓ 실시간 알림 (15분 주기)</li>
+            <li>✓ 기본 대시보드 제공</li>
+            <li>✓ 키워드 제한 10개</li>
+          </ul>
+        </div>
+
+        <div class="relative rounded-3xl border border-blue-400/60 bg-blue-900/80 p-6 text-white shadow-2xl">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-blue-500 px-4 py-1 text-xs font-semibold text-white">MOST POPULAR</span>
+          <h3 class="text-lg font-semibold text-white">Pro</h3>
+          <p class="mt-3 text-3xl font-bold text-white">490<span class="text-base font-medium text-white/70">만 원/월</span></p>
+          <p class="mt-2 text-sm text-blue-100">그룹사 / 중견기업 메인 운영</p>
+          <div class="mt-5 h-px bg-blue-300/30"></div>
+          <ul class="mt-5 space-y-2 text-sm text-blue-50">
+            <li>✓ VibeAI 분석 모듈 포함</li>
+            <li>✓ 실시간 알림 (5분 주기)</li>
+            <li>✓ 대응 초안 생성 (월 20회)</li>
+            <li>✓ 메신저 연동 (Slack/Teams)</li>
+            <li>✓ 키워드 50개 / 계정 5개</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 text-white/80 shadow-lg">
+          <h3 class="text-lg font-semibold text-white">Enterprise</h3>
+          <p class="mt-3 text-3xl font-bold text-white">1,200<span class="text-base font-medium text-white/60">~만 원/월</span></p>
+          <p class="mt-2 text-sm text-white/60">전사 보안 연동 / 대기업</p>
+          <div class="mt-5 h-px bg-white/10"></div>
+          <ul class="mt-5 space-y-2 text-sm">
+            <li>✓ 준실시간 수집 (1분 주기)</li>
+            <li>✓ 전사 보안 연동 (SSO, 감사로그)</li>
+            <li>✓ 맞춤형 리포트 &amp; 전담 매니저</li>
+            <li>✓ API 연동 지원</li>
+            <li>✓ 무제한 키워드 / 계정</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
+        <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5 text-white/80">
+          <p class="text-sm font-semibold text-white">전략적 집중 (Focus)</p>
+          <p class="mt-2 text-sm text-white/70">
+            경쟁사들이 가진 마케팅 기능(인플루언서 발굴 등)은 의도적으로 제외합니다. <strong class="text-white">리스크 대응에서 가장 압도적인 성능을 내는 전문 플랫폼</strong>으로 포지셔닝합니다.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5 text-white/80">
+          <p class="text-sm font-semibold text-white">수익성 확보</p>
+          <p class="mt-2 text-sm text-white/70">
+            기본 구독료 외에 사용량(키워드/토큰) 기반 증량 모델을 도입하여 사용량이 늘어날수록 수익이 증가하는 구조를 설계합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap" class="bg-slate-950">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h2 class="text-2xl font-semibold text-white md:text-3xl">의사결정 요청 및 향후 로드맵</h2>
+        </div>
+        <p class="text-xs text-white/60">"분석을 넘어 <strong class=\"text-white\">대응의 표준</strong>으로"</p>
+      </div>
+
+      <div class="mt-8 rounded-2xl border border-white/10 bg-blue-900/60 px-6 py-5 text-white shadow-lg">
+        <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="text-sm font-semibold">의사결정 요청 사항</p>
+            <p class="mt-2 text-sm text-white/80">
+              현재의 소셜 리스닝 기술 단순 판매가 아닌, VibeX 플랫폼의 <strong class="text-white">정식 사업화 추진 승인</strong>을 요청드립니다.
+            </p>
+          </div>
+          <div class="rounded-full bg-blue-500 px-4 py-2 text-sm font-semibold text-white">승인 요청</div>
+        </div>
+      </div>
+
+      <div class="mt-8 grid gap-6 lg:grid-cols-3">
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 text-white/80 shadow-lg">
+          <div class="flex items-center gap-3">
+            <span class="flex h-9 w-9 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white">1</span>
+            <div>
+              <p class="text-sm font-semibold text-white">PoC 및 핵심 지표 확보</p>
+              <p class="text-xs text-white/60">Pilot &amp; Validation</p>
+            </div>
+          </div>
+          <div class="mt-4 h-px bg-white/10"></div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• 주요 고객사(3~5개) 대상 파일럿</li>
+            <li>• 리스크 감지 정확도 검증</li>
+            <li>• 대응 시간 단축 효과(KPI) 측정</li>
+            <li>• 초기 피드백 반영 및 UI 고도화</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-blue-400/60 bg-blue-900/80 p-6 text-white shadow-2xl">
+          <div class="flex items-center gap-3">
+            <span class="flex h-9 w-9 items-center justify-center rounded-full bg-white text-sm font-semibold text-blue-700">2</span>
+            <div>
+              <p class="text-sm font-semibold text-white">VibeCatch · VibeAI 상품화</p>
+              <p class="text-xs text-blue-100">Product Launch</p>
+            </div>
+          </div>
+          <div class="mt-4 h-px bg-blue-200/30"></div>
+          <ul class="mt-4 space-y-2 text-sm text-blue-50">
+            <li>• 정식 버전 1.0 출시</li>
+            <li>• 요금제(Basic/Pro/Ent) 확정</li>
+            <li>• 메신저 연동(Slack/Teams) 완료</li>
+            <li>• AI 대응 초안 모델 최적화</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-6 text-white/80 shadow-lg">
+          <div class="flex items-center gap-3">
+            <span class="flex h-9 w-9 items-center justify-center rounded-full bg-blue-500 text-sm font-semibold text-white">3</span>
+            <div>
+              <p class="text-sm font-semibold text-white">시장 진입 및 파트너십</p>
+              <p class="text-xs text-white/60">Expansion</p>
+            </div>
+          </div>
+          <div class="mt-4 h-px bg-white/10"></div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• PR 에이전시 파트너십 체결</li>
+            <li>• 그룹사 및 대기업 엔터프라이즈 영업</li>
+            <li>• 글로벌 모니터링 모듈 확장</li>
+            <li>• 리스크 관리 세미나 개최</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 rounded-2xl border border-white/10 bg-slate-900/70 px-6 py-5 text-center text-sm text-white/70">
+        “국내에는 분석 툴은 많지만, <strong class="text-white">대응을 대신 준비해 주는 시스템은 없습니다.</strong> VibeX는 이 빈틈을 선점하여 PR/IR 기술 시장의 새로운 표준(Standard)이 될 것입니다.”
+      </div>
+    </div>
+  </section>
+
+  <section id="appendix" class="bg-slate-950">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h2 class="text-2xl font-semibold text-white md:text-3xl">부록 ① 요금 체계 비교</h2>
+        </div>
+        <p class="text-xs text-white/60">주요 경쟁사 대비 <strong class="text-white">과금 구조 및 가격</strong> 분석</p>
+      </div>
+
+      <div class="mt-8 overflow-x-auto rounded-2xl border border-white/10 bg-white/5 shadow-lg">
+        <table class="min-w-full text-left text-sm text-white/80">
+          <thead class="bg-white/5 text-xs uppercase tracking-wider text-white/60">
+            <tr>
+              <th class="px-4 py-3">서비스</th>
+              <th class="px-4 py-3">공개 가격 (표기 기준)</th>
+              <th class="px-4 py-3">통화 / 세금</th>
+              <th class="px-4 py-3">과금 구조 특징</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/10">
+            <tr class="bg-blue-900/40">
+              <td class="px-4 py-4 font-semibold text-white">
+                VibeX
+                <span class="ml-2 rounded-full bg-blue-500/40 px-2 py-0.5 text-xs text-blue-100">Our Solution</span>
+              </td>
+              <td class="px-4 py-4">
+                Basic 150만 / Pro 490만 (월)
+                <div class="text-xs text-white/60">Enterprise 1,200만~/월 (별도 협의)</div>
+              </td>
+              <td class="px-4 py-4">KRW<br /><span class="text-xs text-white/60">VAT 별도</span></td>
+              <td class="px-4 py-4">
+                합리적 차등 과금<br />
+                <span class="text-xs text-white/60">플랜 + 모듈 + 사용량 (키워드/수집주기/AI)</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 py-4 font-semibold text-white/90">썸트렌드</td>
+              <td class="px-4 py-4">
+                29,700원 ~ 149,000원 / 30일
+                <div class="text-xs text-white/60">비즈니스 200만/월 (1~10인)</div>
+              </td>
+              <td class="px-4 py-4">KRW<br /><span class="text-xs text-white/60">VAT 포함</span></td>
+              <td class="px-4 py-4">
+                구독형 (SaaS)<br />
+                <span class="text-xs text-white/60">기간제 이용권 중심</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 py-4 font-semibold text-white/90">퀘타i</td>
+              <td class="px-4 py-4">가격 미공개 (문의 중심)</td>
+              <td class="px-4 py-4">-</td>
+              <td class="px-4 py-4">
+                문의 기반 협의<br />
+                <span class="text-xs text-white/60">기업 맞춤형 범위/모듈 계약 추정</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 py-4 font-semibold text-white/90">리스닝마인드</td>
+              <td class="px-4 py-4">
+                Standard $1,800 / Pro $2,700 (월)
+                <div class="text-xs text-white/60">Advance 별도 문의</div>
+              </td>
+              <td class="px-4 py-4">USD<br /><span class="text-xs text-white/60">VAT 등 별도</span></td>
+              <td class="px-4 py-4">
+                티어별 구독형<br />
+                <span class="text-xs text-white/60">연간 결제 할인 표기</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-6 grid gap-4 md:grid-cols-2">
+        <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5 text-sm text-white/70">
+          <p class="font-semibold text-white">가격 경쟁력</p>
+          <p class="mt-2">타사 대비 명확한 가격 정책을 제시하며, 기업 규모에 따른 유연한 선택지를 제공합니다.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-5 text-sm text-white/70">
+          <p class="font-semibold text-white">과금 구조의 차이</p>
+          <p class="mt-2">경쟁사가 사용 기간/계정 수 중심일 때, VibeX는 실제 리스크 대응량(키워드/수집주기/AI 사용량)에 맞춰 과금합니다.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h3 class="text-xl font-semibold text-white">부록 ② 서비스 주요 포인트 비교</h3>
+        </div>
+        <p class="text-xs text-white/60">경쟁사별 <strong class="text-white">핵심 가치 및 기능적 차이</strong> 분석</p>
+      </div>
+
+      <div class="mt-6 overflow-x-auto rounded-2xl border border-white/10 bg-white/5 shadow-lg">
+        <table class="min-w-full text-left text-sm text-white/80">
+          <thead class="bg-white/5 text-xs uppercase tracking-wider text-white/60">
+            <tr>
+              <th class="px-4 py-3">비교 질문</th>
+              <th class="px-4 py-3 text-blue-200">VibeX (Our Solution)</th>
+              <th class="px-4 py-3">썸트렌드</th>
+              <th class="px-4 py-3">퀘타i</th>
+              <th class="px-4 py-3">리스닝마인드</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/10">
+            <tr>
+              <td class="px-4 py-3 font-semibold text-white/90">해결하는 문제는?</td>
+              <td class="px-4 py-3 text-white">리스크 대응 골든타임 확보</td>
+              <td class="px-4 py-3">트렌드 / 인사이트 도출</td>
+              <td class="px-4 py-3">트렌드 / 시장 / 경쟁 분석</td>
+              <td class="px-4 py-3">검색 인텐트 / 여정 분석</td>
+            </tr>
+            <tr class="bg-white/5">
+              <td class="px-4 py-3 font-semibold text-white/90">주 사용자는?</td>
+              <td class="px-4 py-3 text-white">PR / IR, 위기대응, 경영진</td>
+              <td class="px-4 py-3">마케팅, 브랜드 매니저</td>
+              <td class="px-4 py-3">마케팅, 전략기획</td>
+              <td class="px-4 py-3">전략기획, 상품기획</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-white/90">‘기사 전’ 신호 포착</td>
+              <td class="px-4 py-3 text-white">✓ 예 (커뮤니티/영상/소셜)</td>
+              <td class="px-4 py-3">부분 (분석 중심)</td>
+              <td class="px-4 py-3">부분 (실시간 언급)</td>
+              <td class="px-4 py-3">아니오 (검색 데이터)</td>
+            </tr>
+            <tr class="bg-white/5">
+              <td class="px-4 py-3 font-semibold text-white/90">분 단위 실시간 운영</td>
+              <td class="px-4 py-3 text-white">✓ 예 (15/5/1분 옵션)</td>
+              <td class="px-4 py-3">제품 설계상 목적 다름</td>
+              <td class="px-4 py-3">운영체계 중심 아님</td>
+              <td class="px-4 py-3">목적 자체가 다름</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-white/90">자동 브리핑 흐름</td>
+              <td class="px-4 py-3 text-white">✓ 예 (메신저 연동 브리핑)</td>
+              <td class="px-4 py-3">대시보드/리포트 중심</td>
+              <td class="px-4 py-3">대시보드 중심</td>
+              <td class="px-4 py-3">분석/리서치 중심</td>
+            </tr>
+            <tr class="bg-white/5">
+              <td class="px-4 py-3 font-semibold text-white/90">대응 초안/보고서 생성</td>
+              <td class="px-4 py-3 text-white">★ 핵심 (초안 + 원클릭 PPT)</td>
+              <td class="px-4 py-3">중심 기능 아님</td>
+              <td class="px-4 py-3">중심 기능 아님</td>
+              <td class="px-4 py-3">중심 기능 아님</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-white/90">도입 조건 (권한/보안)</td>
+              <td class="px-4 py-3 text-white">Enterprise 전면 제시</td>
+              <td class="px-4 py-3">상대적으로 약함</td>
+              <td class="px-4 py-3">정보 제한 (문의)</td>
+              <td class="px-4 py-3">분석 도구 성격</td>
+            </tr>
+            <tr class="bg-white/5">
+              <td class="px-4 py-3 font-semibold text-white/90">가격 프레임</td>
+              <td class="px-4 py-3 text-white">24시간 대응 시스템 비용</td>
+              <td class="px-4 py-3">분석 도구 구독료</td>
+              <td class="px-4 py-3">분석 플랫폼 구독료(문의)</td>
+              <td class="px-4 py-3">분석 도구 구독료(USD)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-6 rounded-2xl border border-white/10 bg-slate-900/70 p-5 text-sm text-white/70">
+        <p class="font-semibold text-white">결론: 목적이 다른 도구입니다.</p>
+        <p class="mt-2">타사는 ‘분석과 인사이트’를 위한 도구이지만, VibeX는 ‘위기 감지와 즉각적 실행’을 위한 운영체계(Operating System)입니다.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+    <footer id="contact" class="border-t bg-white">
+      <div class="mx-auto max-w-7xl px-4 py-10">
+        <div class="grid gap-6 md:grid-cols-2 md:items-center">
+          <div>
+            <div class="text-lg font-bold">도입/확장 상담</div>
+            <div class="mt-1 text-sm text-slate-600">
+              VibeX 플랫폼은 필요한 모듈만 선택하는 방식입니다.<br class="hidden md:block" />
+              VibeCatch(기본 모니터링), VibeAI(고급 분석), VibeFlow(실행 자동화) 모듈을 제공합니다.
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-3 md:justify-end">
+            <a href="../vibeX/#calculator" class="rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-500">예산 계산으로 시작</a>
+            <a href="../vibeX/" class="rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 hover:bg-slate-100">가격/기능 상세 보기</a>
+          </div>
+        </div>
+
+        <div class="mt-8 border-t border-slate-200 pt-6 text-xs text-slate-500">
+          <div class="leading-5">
+            서울시 관악구 남부순환로 1926 경동제약빌딩 3층, 5층, 8층, 9층<br />
+            대표이사: 손윤정 · 대표전화: 02-3475-2800 · 사업자번호: 214-88-13475
+          </div>
+          <div class="mt-2">
+            ⓒ 2026 인크로스. 모든 권리 보유.
+          </div>
+        </div>
+      </div>
+    </footer>
+</main>
+
+<div id="slide-overlay" class="fixed inset-0 z-50 hidden bg-slate-950/95 text-white" role="dialog" aria-modal="true" aria-labelledby="slide-title">
+  <div class="relative h-full w-full">
+    <div class="absolute left-4 top-4 flex items-center gap-3 text-xs text-white/70 md:text-sm">
+      <span id="slide-counter" class="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-white/90">1 / 11</span>
+      <span class="hidden h-4 w-px bg-white/30 md:block"></span>
+      <span id="slide-title" class="hidden font-semibold text-white/90 md:block">슬라이드</span>
+    </div>
+    <div class="absolute right-4 top-4 flex items-center gap-2">
+      <button id="slide-prev" type="button" class="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white/90 transition hover:bg-white/20">이전</button>
+      <button id="slide-next" type="button" class="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white/90 transition hover:bg-white/20">다음</button>
+      <button id="slide-close" type="button" class="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white/90 transition hover:bg-white/20">발표 종료</button>
+    </div>
+    <div class="flex h-full w-full items-center justify-center px-5 py-8 md:px-12 md:py-10">
+      <div class="relative h-full w-full max-w-6xl max-h-[calc(100vh-12rem)] overflow-hidden rounded-3xl border border-white/10 bg-slate-900/40 shadow-2xl">
+        <div id="slide-container" class="flex h-full w-full items-center justify-center"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (() => {
+    const openButton = document.getElementById('open-slide-deck');
+    const overlay = document.getElementById('slide-overlay');
+    const slideContainer = document.getElementById('slide-container');
+    const slideTitle = document.getElementById('slide-title');
+    const slideCounter = document.getElementById('slide-counter');
+    const prevButton = document.getElementById('slide-prev');
+    const nextButton = document.getElementById('slide-next');
+    const closeButton = document.getElementById('slide-close');
+
+    if (!openButton || !overlay || !slideContainer || !slideCounter || !prevButton || !nextButton || !closeButton) {
+      return;
+    }
+
+    const createHeading = (text) => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'mb-6';
+      const heading = document.createElement('h2');
+      heading.className = 'text-2xl font-semibold text-white md:text-3xl';
+      heading.textContent = text;
+      wrapper.appendChild(heading);
+      return wrapper;
+    };
+
+    const makeSlide = (title, nodes) => {
+      const viewport = document.createElement('div');
+      viewport.className = 'w-full max-h-full overflow-y-auto px-6 py-6 md:px-10 md:py-8';
+      const inner = document.createElement('div');
+      inner.className = 'mx-auto max-w-6xl';
+      nodes.forEach((node) => {
+        if (node) {
+          inner.appendChild(node);
+        }
+      });
+      viewport.appendChild(inner);
+      return { title, content: viewport };
+    };
+
+    const clone = (selector) => {
+      const element = document.querySelector(selector);
+      return element ? element.cloneNode(true) : null;
+    };
+
+    const buildSlides = () => {
+      const slides = [];
+      const hero = clone('main > section:first-of-type');
+      if (hero) {
+        const heroButton = hero.querySelector('#open-slide-deck');
+        if (heroButton) {
+          heroButton.remove();
+        }
+        slides.push(makeSlide('VibeX 사업화 추진안', [hero]));
+      }
+
+      const summary = clone('#summary');
+      if (summary) {
+        slides.push(makeSlide('핵심 요약', [summary]));
+      }
+
+      const gap = clone('#gap');
+      if (gap) {
+        slides.push(makeSlide('시장 공백', [gap]));
+      }
+
+      const category = clone('#category');
+      if (category) {
+        slides.push(makeSlide('전략 분류', [category]));
+      }
+
+      const competitorCards = Array.from(document.querySelectorAll('#competitors .mt-8.space-y-8 > div'));
+      competitorCards.forEach((card) => {
+        const name = card.querySelector('.text-2xl')?.textContent?.trim();
+        const title = name ? `경쟁사 상세 분석 · ${name}` : '경쟁사 상세 분석';
+        slides.push(makeSlide(title, [createHeading(title), card.cloneNode(true)]));
+      });
+
+      const model = clone('#model');
+      if (model) {
+        slides.push(makeSlide('수익 모델', [model]));
+      }
+
+      const roadmap = clone('#roadmap');
+      if (roadmap) {
+        slides.push(makeSlide('로드맵', [roadmap]));
+      }
+
+      const appendixWrap = document.querySelector('#appendix > div');
+      if (appendixWrap) {
+        const children = Array.from(appendixWrap.children);
+        const splitIndex = children.findIndex((child) => child.classList.contains('mt-12'));
+        const firstPart = splitIndex > 0 ? children.slice(0, splitIndex) : children;
+        const secondPart = splitIndex > 0 ? children.slice(splitIndex) : [];
+
+        if (firstPart.length) {
+          slides.push(makeSlide('부록 ① 요금 체계 비교', firstPart.map((node) => node.cloneNode(true))));
+        }
+        if (secondPart.length) {
+          slides.push(makeSlide('부록 ② 서비스 주요 포인트 비교', secondPart.map((node) => node.cloneNode(true))));
+        }
+      }
+
+      return slides;
+    };
+
+    let slides = [];
+    let index = 0;
+
+    const render = () => {
+      const slide = slides[index];
+      if (!slide) {
+        return;
+      }
+      slideContainer.innerHTML = '';
+      slideContainer.appendChild(slide.content);
+      slideCounter.textContent = `${index + 1} / ${slides.length}`;
+      if (slideTitle) {
+        slideTitle.textContent = slide.title;
+      }
+
+      const isFirst = index === 0;
+      const isLast = index === slides.length - 1;
+      prevButton.disabled = isFirst;
+      nextButton.disabled = isLast;
+      prevButton.classList.toggle('opacity-40', isFirst);
+      prevButton.classList.toggle('cursor-not-allowed', isFirst);
+      nextButton.classList.toggle('opacity-40', isLast);
+      nextButton.classList.toggle('cursor-not-allowed', isLast);
+    };
+
+    const open = () => {
+      slides = buildSlides();
+      index = 0;
+      overlay.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+      render();
+    };
+
+    const close = () => {
+      overlay.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    };
+
+    const next = () => {
+      if (index < slides.length - 1) {
+        index += 1;
+        render();
+      }
+    };
+
+    const prev = () => {
+      if (index > 0) {
+        index -= 1;
+        render();
+      }
+    };
+
+    openButton.addEventListener('click', open);
+    closeButton.addEventListener('click', close);
+    nextButton.addEventListener('click', next);
+    prevButton.addEventListener('click', prev);
+
+    overlay.addEventListener('click', (event) => {
+      if (event.target === overlay) {
+        close();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (overlay.classList.contains('hidden')) {
+        return;
+      }
+      if (event.key === 'Escape') {
+        close();
+      }
+      if (event.key === 'ArrowRight') {
+        next();
+      }
+      if (event.key === 'ArrowLeft') {
+        prev();
+      }
+    });
+  })();
+</script>
+</body>
+</html>
