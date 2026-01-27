@@ -121,10 +121,6 @@ function buildRootIndex(projects) {
                 <p class="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
                     ${p.desc}
                 </p>
-                <div class="mt-8 flex items-center gap-2 text-[10px] font-bold text-blue-400/50 uppercase tracking-widest">
-                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                    Live Project
-                </div>
             </a>
             `).join('')}
         </div>

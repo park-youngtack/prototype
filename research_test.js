@@ -15,6 +15,14 @@ async function researchCompany(companyName) {
     fs.mkdirSync(resultsDir);
   }
 
+  const mdFilePath = path.join(resultsDir, `${companyName}.md`);
+
+  // 이미 리서치 결과가 있는 경우 건너뛰기 (비용 보호)
+  if (fs.existsSync(mdFilePath)) {
+    console.log(`\n[${companyName}] 이미 리서치 결과가 존재합니다. (${mdFilePath})`);
+    return fs.readFileSync(mdFilePath, 'utf8');
+  }
+
   console.log(`\n[${companyName}] 리서치를 시작합니다 (Deep Research 모델 사용)...`);
 
   const prompt = `
@@ -61,7 +69,6 @@ async function researchCompany(companyName) {
     console.log("\n\n리서치 완료!");
 
     // Markdown 파일 저장
-    const mdFilePath = path.join(resultsDir, `${companyName}.md`);
     fs.writeFileSync(mdFilePath, fullContent);
     console.log(`\n📄 [Markdown 문서 생성 완료]: ${mdFilePath}`);
 
@@ -71,5 +78,11 @@ async function researchCompany(companyName) {
   }
 }
 
-// 첫 번째 테스트 대상: 로플랫
-researchCompany("로플랫");
+// 메인 실행부
+const companyArg = process.argv[2];
+if (companyArg) {
+  researchCompany(companyArg);
+} else {
+  // 기본 테스트 대상: 로플랫
+  researchCompany("로플랫");
+}
